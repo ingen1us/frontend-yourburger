@@ -477,31 +477,13 @@
             </section>
             <footer class=" modal-card-foot">
                 <button class="button is-primary" onclick="toggleEdit()">Cancelar</button>
-                <button class="button is-success">Confirmar</button>
+                <button class="button is-success" type="submit">Confirmar</button>
             </footer>
         </div>
     </div>
 
 
     <script src="js/main.js"></script>
-
-    <script>
-        function toggleEdit() {
-            if (document.querySelector('.modal-edit').classList.contains('is-active')) {
-                document.querySelector('.modal-edit').classList.remove('is-active')
-            } else {
-                document.querySelector('.modal-edit').classList.add('is-active')
-            }
-        }
-
-        function toggleNew() {
-            if (document.querySelector('.modal-new').classList.contains('is-active')) {
-                document.querySelector('.modal-new').classList.remove('is-active')
-            } else {
-                document.querySelector('.modal-new').classList.add('is-active')
-            }
-        }
-    </script>
 </body>
 
 </html>

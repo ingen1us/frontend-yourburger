@@ -282,219 +282,204 @@
     </div>
 
     <div class="modal modal-new">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Nuevo Usuario</p>
-                <button class="delete" aria-label="close" onclick="toggleNew()">
+        <form class="form-new">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Nuevo Usuario</p>
+                    <button class="delete" aria-label="close" onclick="toggleNew()">
 
-                </button>
-            </header>
-            <section class="modal-card-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Nombre:</label>
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="text" placeholder="">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
+                            </div>
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Apellido:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="column">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Apellido:</label>
+                        <div class="columns is-centered">
+                            <div class="column is-half">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Email:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="email" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="text" placeholder="">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Contraseña:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="password" value="your" placeholder=""
+                                                    disabled>
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-key"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-vertical">
+                                    <div class=" field-label">
+                                        <label class="label has-text-centered">Rol:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="select" style="min-width: 100%;">
+                                            <select style="min-width: 100%;">
+                                                <option>Administrador (0)</option>
+                                                <option>Usuario (1)</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="columns is-centered">
-                        <div class="column is-half">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Email:</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="email" placeholder="">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-envelope"></i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Contraseña:</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="password" placeholder="">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-key"></i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field is-vertical">
-                                <div class=" field-label">
-                                    <label class="label has-text-centered">Rol:</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="select" style="min-width: 100%;">
-                                        <select style="min-width: 100%;">
-                                            <option></option>
-                                            <option>Administrador (0)</option>
-                                            <option>Usuario (1)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class=" modal-card-foot">
-                <button class="button is-primary" onclick="toggleNew()">Cancelar</button>
-                <button class="button is-success">Confirmar</button>
-            </footer>
-        </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" onclick="toggleNew()">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+            </div>
+        </form>
     </div>
 
     <div class="modal modal-edit">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Editar Usuario</p>
-                <button class="delete" onclick="toggleEdit()" aria-label="close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </header>
-            <section class="modal-card-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Nombre:</label>
+        <form class="form-edit">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Editar Usuario</p>
+                    <button class="delete" onclick="toggleEdit()" aria-label="close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="" value="Yeiner">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="text" placeholder="" value="Yeiner">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
+                            </div>
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Apellido:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="" value="Naranjo">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="column">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Apellido:</label>
+                        <div class="columns is-centered">
+                            <div class="column is-half">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Email:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="email" placeholder=""
+                                                    value="yeinernaranjo@gmail.com">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="text" placeholder="" value="Naranjo">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
+                                <div class="field is-vertical">
+                                    <div class=" field-label">
+                                        <label class="label has-text-centered">Rol:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="select" style="min-width: 100%;">
+                                            <select style="min-width: 100%;">
+                                                <option selected>Administrador (0)</option>
+                                                <option>Usuario (1)</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="columns is-centered">
-                        <div class="column is-half">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Email:</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="email" placeholder=""
-                                                value="yeinernaranjo@gmail.com">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-envelope"></i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field is-vertical">
-                                <div class=" field-label">
-                                    <label class="label has-text-centered">Rol:</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="select" style="min-width: 100%;">
-                                        <select style="min-width: 100%;">
-                                            <option></option>
-                                            <option selected>Administrador (0)</option>
-                                            <option>Usuario (1)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class=" modal-card-foot">
-                <button class="button is-primary" onclick="toggleEdit()">Cancelar</button>
-                <button class="button is-success">Confirmar</button>
-            </footer>
-        </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" onclick="toggleEdit()">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+            </div>
+        </form>
     </div>
 
 
     <script src="js/main.js"></script>
-
-    <script>
-        function toggleEdit() {
-            if (document.querySelector('.modal-edit').classList.contains('is-active')) {
-                document.querySelector('.modal-edit').classList.remove('is-active')
-            } else {
-                document.querySelector('.modal-edit').classList.add('is-active')
-            }
-        }
-
-        function toggleNew() {
-            if (document.querySelector('.modal-new').classList.contains('is-active')) {
-                document.querySelector('.modal-new').classList.remove('is-active')
-            } else {
-                document.querySelector('.modal-new').classList.add('is-active')
-            }
-        }
-    </script>
 </body>
 
 </html>
