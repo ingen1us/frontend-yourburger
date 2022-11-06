@@ -17,35 +17,58 @@ function toggleMenu() {
   }
 }
 
-// ACTIVACION FORMULARIO
-function toggleEdit() {
-  if (document.querySelector(".modal-edit").classList.contains("is-active")) {
-    document.querySelector(".form-edit").reset();
-    campos["text"] = false;
-    campos["email"] = false;
-    document.querySelector(".modal-edit").classList.remove("is-active");
-  } else {
-    document.querySelector(".modal-edit").classList.add("is-active");
-  }
-}
-
-function toggleNew() {
-  if (document.querySelector(".modal-new").classList.contains("is-active")) {
-    document.querySelector(".form-new").reset();
-    campos["text"] = false;
-    campos["email"] = false;
-    document.querySelector(".modal-new").classList.remove("is-active");
-  } else {
-    document.querySelector(".modal-new").classList.add("is-active");
-  }
-}
-
 // VALIDACIONES FORMULARIO
-const formularioN = document.querySelector(".form-new");
-const inputsN = document.querySelectorAll(".form-new input");
+let isActive = false;
+let activeForm;
+let activeInputs;
+let allButtons = document.querySelectorAll("button");
 
-const formularioE = document.querySelector(".form-edit");
-const inputsE = document.querySelectorAll(".form-edit input");
+allButtons.forEach((btn) => {
+  btn.onclick = function () {
+    if (this.name != "") {
+      activeForm = document.querySelector(`.form-${this.name}`);
+      activeInputs = document.querySelectorAll(`.form-${this.name} input`);
+    }
+
+    function toggleForm() {
+      if (isActive) {
+        document.querySelector(`.form-${btn.name}`).reset();
+        activeInputs.forEach((inp) => {
+          inp.classList.remove("is-success");
+          inp.classList.remove("is-danger");
+        });
+        campos["text"] = false;
+        campos["email"] = false;
+        document
+          .querySelector(`.modal-${btn.name}`)
+          .classList.remove("is-active");
+        isActive = false;
+      } else {
+        document.querySelector(`.modal-${btn.name}`).classList.add("is-active");
+        isActive = true;
+      }
+    }
+
+    activeInputs.forEach((input) => {
+      input.addEventListener("keyup", validarFormulario);
+      input.addEventListener("blur", validarFormulario);
+    });
+
+    activeForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (campos.text && campos.email) {
+        toggleForm();
+      } else {
+      }
+    });
+
+    if (this.name == "new") {
+      toggleForm();
+    } else if (this.name == "edit") {
+      toggleForm();
+    }
+  };
+});
 
 const expresiones = {
   nombres: /^[a-zA-Z]+$/,
@@ -85,34 +108,3 @@ const validarCampo = (expresion, input, campo) => {
     campos[campo] = false;
   }
 };
-
-// FORMULARIO DE CREAR
-
-inputsN.forEach((input) => {
-  input.addEventListener("keyup", validarFormulario);
-  input.addEventListener("blur", validarFormulario);
-});
-
-formularioN.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (campos.text && campos.email) {
-    toggleNew();
-  } else {
-  }
-});
-
-// FORMULARIO DE EDITAR
-
-inputsE.forEach((input) => {
-  input.addEventListener("keyup", validarFormulario);
-  input.addEventListener("blur", validarFormulario);
-});
-
-formularioE.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  if (campos.text && campos.email) {
-    toggleEdit();
-  } else {
-  }
-});

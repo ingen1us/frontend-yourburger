@@ -130,7 +130,7 @@
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
             <div class="column is-narrow">
-                <button class="button is-success" onclick="toggleNew()">Crear Usuario +</button>
+                <button class="button is-success" name="new">Crear Usuario +</button>
             </div>
             <div class="column is-9">
                 <div class="control has-icons-left">
@@ -176,7 +176,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="button edit is-warning" onclick="toggleEdit()">
+                        <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
@@ -205,7 +205,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="button edit is-warning" onclick="toggleEdit()">
+                        <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
@@ -234,7 +234,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="button edit is-warning" onclick="toggleEdit()">
+                        <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
@@ -263,7 +263,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="button edit is-warning" onclick="toggleEdit()">
+                        <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
@@ -287,11 +287,11 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Nuevo Usuario</p>
-                    <button class="delete" aria-label="close" onclick="toggleNew()">
+                    <button class="delete" aria-label="close" name="new">
 
                     </button>
                 </header>
-                <section class="modal-card-body">
+                <section class=" modal-card-body">
                     <div class="container">
                         <div class="columns">
                             <div class="column">
@@ -380,7 +380,7 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <button class="button is-primary" onclick="toggleNew()">Cancelar</button>
+                    <button class="button cancel is-primary" name="new">Cancelar</button>
                     <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
             </div>
@@ -393,7 +393,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Editar Usuario</p>
-                    <button class="delete" onclick="toggleEdit()" aria-label="close">
+                    <button class="delete" name="edit" aria-label="close">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </header>
@@ -471,7 +471,7 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <button class="button is-primary" onclick="toggleEdit()">Cancelar</button>
+                    <button class="button cancel is-primary" name="edit">Cancelar</button>
                     <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
             </div>

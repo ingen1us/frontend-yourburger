@@ -130,7 +130,7 @@
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
             <div class="column is-2">
-                <button class="button is-success" onclick="toggleNew()">Crear Rol +</button>
+                <button class="button is-success" name="new">Crear Rol +</button>
             </div>
             <div class="column is-10">
                 <div class="control has-icons-left">
@@ -167,7 +167,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="button edit is-warning" onclick="toggleEdit()">
+                        <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
@@ -193,7 +193,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="button edit is-warning" onclick="toggleEdit()">
+                        <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
@@ -212,274 +212,278 @@
     </div>
 
     <div class="modal modal-new">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Nuevo Rol</p>
-                <button class="delete" aria-label="close" onclick="toggleNew()">
-                </button>
-            </header>
-            <section class="modal-card-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Nombre:</label>
+        <form class="form-new">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Nuevo Rol</p>
+                    <button class="delete" aria-label="close" name="new">
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="text" placeholder="">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
+                            </div>
+                        </div>
+                        <div class="container has-text-centered ">
+                            <h1 class="title">MODULOS</h1>
+                        </div>
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Usuarios</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Clientes</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Productos</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Pedidos</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Roles</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Ventas</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container has-text-centered ">
-                        <h1 class="title">MODULOS</h1>
-                    </div>
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Usuarios</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Clientes</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Productos</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Pedidos</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Roles</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Ventas</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class=" modal-card-foot">
-                <button class="button is-primary" onclick="toggleNew()">Cancelar</button>
-                <button class="button is-success">Confirmar</button>
-            </footer>
-        </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" name="new">Cancelar</button>
+                    <button class="button is-success">Confirmar</button>
+                </footer>
+            </div>
+        </form>
     </div>
 
     <div class="modal modal-edit">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Editar Rol</p>
-                <button class="delete" onclick="toggleEdit()" aria-label="close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </header>
-            <section class="modal-card-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column">
-                            <div class="field is-vertical">
-                                <div class="field-label">
-                                    <label class="label has-text-centered">Nombre:</label>
+        <form class="form-edit">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Editar Rol</p>
+                    <button class="delete" name="edit" aria-label="close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="" value="Cliente">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="text" placeholder="" value="Cliente">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                        </p>
+                            </div>
+                        </div>
+                        <div class="container has-text-centered ">
+                            <h1 class="title">MODULOS</h1>
+                        </div>
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Usuarios</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Clientes</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Productos</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Pedidos</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Roles</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Ventas</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container has-text-centered ">
-                        <h1 class="title">MODULOS</h1>
-                    </div>
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Usuarios</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Clientes</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Productos</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Pedidos</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Roles</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column is-4">
-                            <div class="field">
-                                <div class="field-label" style="margin-right: 0">
-                                    <label class="label has-text-centered">Ventas</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class=" modal-card-foot">
-                <button class="button is-primary" onclick="toggleEdit()">Cancelar</button>
-                <button class="button is-success" type="submit">Confirmar</button>
-            </footer>
-        </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" name="edit">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+            </div>
+        </form>
     </div>
 
 
