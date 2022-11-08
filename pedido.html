@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pedidos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/mystyles.css" />
+    <script src="https://kit.fontawesome.com/f02518bebc.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            
+        }
+        .card-pedido {
+            background-color: hsl(0deg, 0%, 100%);
+            border-radius: 5px;
+            margin: 15px;
+            padding: 5px;
+            width: 200px;
+        }        
+        .card-info {
+            background-color: hsl(0deg, 0%, 100%);
+            border-radius: 5px;
+        }
+
+        .img {
+            width: 160px;
+            border-radius: 5px;
+        }
+
+        .number {
+            width: 30px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            display: block;
+        }
+
+        span {
+            width: 200px;
+        }
+
+        .plus {
+            font-size: 100px;
+            font-style: normal;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="img/only-text.png" width="110" />
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample" onclick="toggleMenu()">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="usuarios.html"> Usuarios </a>
+
+                <a class="navbar-item" href="clientes.html"> Clientes </a>
+
+                <a class="navbar-item"> Productos </a>
+
+                <a class="navbar-item is-active" href="pedido.html">
+                    Pedidos
+                </a>
+
+                <a class="navbar-item" href="roles.html"> Roles </a>
+
+                <a class="navbar-item" href="ventas.html"> Ventas </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button">
+                            <strong>Registrate</strong>
+                        </a>
+                        <a class="button is-light"> Ingresar </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class="container is-fluid mt-5">
+        <div class="columns is-centered">
+            <div class="column is-two-third card ">
+                <div class="columns">
+                    <div class="column">
+                        <div class="card has-text-centered  producto">
+                            <img src="img/hamburguesa.jpg" alt="" class="img" />
+                            <b>
+                                <p>hamburguesas</p>
+                            </b>
+                            <span>14000$</span> <br>
+                            <input type="number" name="" id="" class="input number" value="1" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card has-text-centered  producto">
+                            <img src="img/hamburguesa.jpg" alt="" class="img" />
+                            <b>
+                                <p>hamburguesas</p>
+                            </b>
+                            <span>14000$</span> <br>
+                            <input type="number" name="" id="" class="input number" value="1" />
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card añadir">
+                            <i class="fa-light fa-plus plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card info">
+                    <h1>hola</h1>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+<div class="container is-fluid mt-5 has-text-centered">
+    <div class="columns is-centered">
+        <div class="column is-two-thirds">
+            <div class="is-flex">
+                <div class="card card-pedido">
+                    <img src="img/hamburguesa.jpg" alt="" class="img" />
+                    <b>
+                        <p>hamburguesas</p>
+                    </b>
+                    <span>14000$</span> <br>
+                    <input type="number" name="" id="" class="input number" value="1" />
+                </div>
+                <div class="card card-pedido">
+                    <img src="img/hamburguesa.jpg" alt="" class="img" />
+                    <b>
+                        <p>hamburguesas</p>
+                    </b>
+                    <span>14000$</span> <br>
+                    <input type="number" name="" id="" class="input number" value="1" />
+                </div>
+                <div class="card card-pedido">
+                    <img src="img/hamburguesa.jpg" alt="" class="img" />
+                    <b>
+                        <p>hamburguesas</p>
+                    </b>
+                    <span>14000$</span> <br>
+                    <input type="number" name="" id="" class="input number" value="1" />
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="column is-one-third">
+            <div class="card card-info">
+                <h1> info</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
