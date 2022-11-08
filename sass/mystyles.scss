@@ -5,8 +5,9 @@
 
 // Set your brand colors
 $primary-color: #cf2924;
-$secondary-color: #c59b68;
+$secondary-color: #FFEDB9;
 $beige-lighter: #EFF0EB;
+$gray-light: #DBDBDA;
 
 // Update Bulma's global variables
 $family-sans-serif: "Karla", sans-serif;
@@ -14,6 +15,9 @@ $primary: $primary-color;
 $link: $secondary-color;
 $navbar-background-color: $primary-color;
 $navbar-item-color: $beige-lighter;
+$navbar-item-hover-color: $gray-light;
+$navbar-item-hover-background-color: $primary-color;
+$navbar-item-active-color: $secondary-color;
 
 $navbar-height: 4rem;
 $widescreen-enabled: false;
