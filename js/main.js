@@ -43,6 +43,7 @@ allButtons.forEach((btn) => {
         });
         campos["text"] = false;
         campos["email"] = false;
+        campos["checkbox"] = false;
         document
           .querySelector(`.modal-${btn.name}`)
           .classList.remove("is-active");
