@@ -67,6 +67,73 @@
         .slider.round:before {
             border-radius: 50%;
         }
+
+        /* Tabla responsive */
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        @media screen and (max-width: 600px) {
+            .switch {
+                width: 42px;
+                height: 19px;
+            }
+
+            .slider:before {
+                height: 12px;
+                width: 12px;
+            }
+
+            input:checked+.slider:before {
+                -webkit-transform: translateX(21px);
+                -ms-transform: translateX(21px);
+                transform: translateX(21px);
+            }
+
+            table {
+                border: 0;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 5px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                display: block;
+                font-size: .8em;
+                text-align: right !important;
+            }
+
+            table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+
+            table button {
+                font-size: 0.80rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -130,7 +197,7 @@
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
             <div class="column is-narrow">
-                <button class="button is-success" name="new">Crear Usuario +</button>
+                <button class="button is-success is-fullwidth" name="new">Crear Usuario +</button>
             </div>
             <div class="column is-9">
                 <div class="control has-icons-left">
@@ -141,139 +208,136 @@
                 </div>
             </div>
             <div class="column is-narrow">
-                <button class="button is-primary">Generar PDF</button>
+                <button class="button is-primary is-fullwidth">Generar PDF</button>
             </div>
         </div>
 
-        <table class="table is-fullwidth">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Rol</th>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Email</th>
-                    <th>Registro</th>
-                    <th>Estado</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td scope="row">0</td>
-                    <td>0</td>
-                    <td>Yeiner</td>
-                    <td>747ddd542a20c10c16598e404a83f57b</td>
-                    <td>yeiner@gmail.com</td>
-                    <td>02/01/2022</td>
-                    <td>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                    <td>
-                        <button class="button edit is-warning" name="edit">
-                            <span class="icon">
-                                <i class="fa-solid fa-pencil"></i>
-                            </span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="button is-primary">
-                            <span class="icon">
-                                <i class="fa-solid fa-trash"></i>
-                            </span>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">1</td>
-                    <td>0</td>
-                    <td>Jose</td>
-                    <td>662eaa47199461d01a623884080934ab</td>
-                    <td>jose@gmail.com</td>
-                    <td>03/05/2019</td>
-                    <td>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                    <td>
-                        <button class="button edit is-warning" name="edit">
-                            <span class="icon">
-                                <i class="fa-solid fa-pencil"></i>
-                            </span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="button is-primary">
-                            <span class="icon">
-                                <i class="fa-solid fa-trash"></i>
-                            </span>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">2</td>
-                    <td>1</td>
-                    <td>Ana</td>
-                    <td>9aba45a7f1999a9c5fc96ef2a45810fb</td>
-                    <td>ana@gmail.com</td>
-                    <td>24/08/2021</td>
-                    <td>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                    <td>
-                        <button class="button edit is-warning" name="edit">
-                            <span class="icon">
-                                <i class="fa-solid fa-pencil"></i>
-                            </span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="button is-primary">
-                            <span class="icon">
-                                <i class="fa-solid fa-trash"></i>
-                            </span>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">3</td>
-                    <td>1</td>
-                    <td>Julián</td>
-                    <td>ff44570aca8241914870afbc310cdb85</td>
-                    <td>julian@gmail.com</td>
-                    <td>19/12/2021</td>
-                    <td>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </td>
-                    <td>
-                        <button class="button edit is-warning" name="edit">
-                            <span class="icon">
-                                <i class="fa-solid fa-pencil"></i>
-                            </span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="button is-primary">
-                            <span class="icon">
-                                <i class="fa-solid fa-trash"></i>
-                            </span>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div style="overflow-x: auto;">
+            <table class=" table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Rol</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Registro</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" data-label="id">0</td>
+                        <td data-label="rol">0</td>
+                        <td data-label="usuario">Yeiner</td>
+                        <td data-label="correo">yeiner@gmail.com</td>
+                        <td data-label="registro">02/01/2022</td>
+                        <td data-label="estado">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="eliminar">
+                            <button class="button is-primary">
+                                <span class="icon">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" data-label="id">1</td>
+                        <td data-label="rol">0</td>
+                        <td data-label="usuario">Jose</td>
+                        <td data-label="correo">jose@gmail.com</td>
+                        <td data-label="registro">03/05/2019</td>
+                        <td data-label="estado">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="eliminar">
+                            <button class="button is-primary">
+                                <span class="icon">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" data-label="id">2</td>
+                        <td data-label="rol">1</td>
+                        <td data-label="usuario">Ana</td>
+                        <td data-label="correo">ana@gmail.com</td>
+                        <td data-label="registro">24/08/2021</td>
+                        <td data-label="estado">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="eliminar">
+                            <button class="button is-primary">
+                                <span class="icon">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" data-label="id">3</td>
+                        <td data-label="rol">1</td>
+                        <td data-label="usuario">Julián</td>
+                        <td data-label="correo">julian@gmail.com</td>
+                        <td data-label="registro">19/12/2021</td>
+                        <td data-label="estado">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="eliminar">
+                            <button class="button is-primary">
+                                <span class="icon">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="modal modal-new">

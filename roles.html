@@ -67,6 +67,73 @@
         .slider.round:before {
             border-radius: 50%;
         }
+
+        /* Tabla responsive */
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        @media screen and (max-width: 600px) {
+            .switch {
+                width: 42px;
+                height: 19px;
+            }
+
+            .slider:before {
+                height: 12px;
+                width: 12px;
+            }
+
+            input:checked+.slider:before {
+                -webkit-transform: translateX(21px);
+                -ms-transform: translateX(21px);
+                transform: translateX(21px);
+            }
+
+            table {
+                border: 0;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 5px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                display: block;
+                font-size: .8em;
+                text-align: right !important;
+            }
+
+            table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+
+            table button {
+                font-size: 0.80rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -130,7 +197,7 @@
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
             <div class="column is-2">
-                <button class="button is-success" name="new">Crear Rol +</button>
+                <button class="button is-success is-fullwidth" name="new">Crear Rol +</button>
             </div>
             <div class="column is-10">
                 <div class="control has-icons-left">
@@ -156,24 +223,25 @@
             </thead>
             <tbody>
                 <tr>
-                    <td scope="row">0</td>
-                    <td>Administrador</td>
-                    <td>02/08/2022</td>
-                    <td>Usuarios - Clientes - Productos - Cotización - Pedido - Roles - Ventas</td>
-                    <td>
+                    <td scope="row" data-label="id">0</td>
+                    <td data-label="nombre">Administrador</td>
+                    <td data-label="creación">02/08/2022</td>
+                    <td data-label="permisos">Usuarios - Clientes - Productos - Cotización - Pedido - Roles - Ventas
+                    </td>
+                    <td data-label="estado">
                         <label class="switch">
                             <input type="checkbox">
                             <span class="slider round"></span>
                         </label>
                     </td>
-                    <td>
+                    <td data-label="editar">
                         <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
                         </button>
                     </td>
-                    <td>
+                    <td data-label="eliminar">
                         <button class="button is-primary">
                             <span class="icon">
                                 <i class="fa-solid fa-trash"></i>
@@ -182,24 +250,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <td scope="row">1</td>
-                    <td>Cliente</td>
-                    <td>03/08/2022</td>
-                    <td>Productos</td>
-                    <td>
+                    <td scope="row" data-label="id">1</td>
+                    <td data-label="nombre">Cliente</td>
+                    <td data-label="creación">03/08/2022</td>
+                    <td data-label="permisos">Productos</td>
+                    <td data-label="estado">
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
-                    <td>
+                    <td data-label="editar">
                         <button class="button edit is-warning" name="edit">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
                         </button>
                     </td>
-                    <td>
+                    <td data-label="eliminar">
                         <button class="button is-primary">
                             <span class="icon">
                                 <i class="fa-solid fa-trash"></i>
