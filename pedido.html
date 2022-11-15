@@ -17,6 +17,7 @@
             margin: 15px;
             padding: 5px;
             width: 250px;
+            border: 2px solid;
         }
 
         .none {
@@ -26,7 +27,7 @@
         .card-info {
             background-color: hsl(0deg, 0%, 100%);
             border-radius: 5px;
-            height: 70vh;
+            border: 2px solid;
         }
 
         .img {
@@ -62,12 +63,12 @@
             margin: 15px;
             padding: 5px;
             width: 250px;
-            height: 90%;
+            border: 2px solid;
 
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 40px;
         }
 
         .hr {
@@ -124,10 +125,10 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button">
+                        <a class="button" href="registro.html">
                             <strong>Registrate</strong>
                         </a>
-                        <a class="button is-light"> Ingresar </a>
+                        <a class="button is-light" href="login.html"> Ingresar </a>
                     </div>
                 </div>
             </div>
@@ -162,19 +163,21 @@
                         <input type="number" name="" id="" class="input number m-0" value="1"  min="0"/>
                     </div>
                     <!-- envia a productos -->
-                    <a >
+                    
                         <div class="card añadir">
                             <i class="fa-light fa-plus plus"></i>
                         </div>
-                    </a>
+                    
 
                 </div>
 
             </div>
             <div class="column is-one-third">
                 <div class="card card-info">
-                    <div class="card-header">
+                    <div class="card-header px-2">
                         <h1>Detalle</h1>
+                        <div class="hr"></div>
+
                     </div>
                     <div class="card-content p-6">
                         <div class="mb-3">
@@ -240,8 +243,8 @@
                             </div>
                         </div>
                         <div class="is-flex is-full">
-                            <div class="m-auto">
-                                <button class="button is-primary" name="cancelar"> Cancelar</button>
+                            <div class="m-auto pb-5">
+                                <button class="button is-primary mr-3" name="cancelar"> Cancelar</button>
                                 <button class="button is-success" name="buy"> Comprar</button>
                             </div>
                         </div>
