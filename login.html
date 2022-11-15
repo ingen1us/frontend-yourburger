@@ -21,6 +21,15 @@
         a:hover{
             color: grey ;
         }
+        .contra{
+            border: none;
+            background-color: white;
+        }
+        .contra:hover{
+            color: grey;
+            
+
+        }
     </style>
 </head>
 
@@ -71,15 +80,79 @@
                                     <a class="button is-primary" href="/">Iniciar sesión</a>
                                     <br>
                                     <br>
+                                    <button class="is-link contra" name="new">¿Olvidaste tu contraseña?</button>
+                                    <br>
+                                    <br>
                                     <a href="registro.html">¿Aún no tienes una cuenta?</a>
                                 </div>
                             </div>
                         </div>
+                        
+   
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="modal modal-new">
+        <form class="form-new">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Recuperar Contraseña</p>
+                    <button class="delete" aria-label="close" name="new">
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Ingrese su Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Ingrese su Correo</label>                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="email" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" name="new">Cancelar</button>
+                    <button class="button is-success">Confirmar</button>
+                </footer>
+            </div>
+        </form>
+    </div>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
