@@ -25,6 +25,7 @@ let activeName;
 let allButtons = document.querySelectorAll("button");
 let hayEmail = false;
 let haySlides = false;
+let haydir = false;
 
 allButtons.forEach((btn) => {
   btn.onclick = function () {
@@ -44,6 +45,7 @@ allButtons.forEach((btn) => {
         campos["text"] = false;
         campos["email"] = false;
         campos["checkbox"] = false;
+        campos["dir"] = false;
         document
           .querySelector(`.modal-${btn.name}`)
           .classList.remove("is-active");
@@ -58,12 +60,18 @@ allButtons.forEach((btn) => {
           if (document.querySelector("div.slides")) {
             haySlides = true;
           }
+          if (inp.name == "dir") {
+            haydir = true;
+          }
         });
         if (!hayEmail) {
           campos["email"] = true;
         }
         if (!haySlides) {
           campos["checkbox"] = true;
+        }
+        if (!haydirr) {
+          campos["dir"] = true;
         }
       }
     }
@@ -80,13 +88,20 @@ allButtons.forEach((btn) => {
         toggleForm();
       } else {
       }
+      if (campos.dir && campos.checkbox) {
+        toggleForm();
+      }else{
+
+      }
     });
 
     if (this.name == "new") {
       toggleForm();
     } else if (this.name == "edit") {
       toggleForm();
-    }
+    } else if(this.name == "buy") {
+      toggleForm();
+    } 
   };
 });
 
@@ -95,16 +110,20 @@ const expresiones = {
   contrasena: /^.{4-12}$/,
   correo: /^[a-zA-Z0-9.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
   telefono: /^\d{10}$/,
+  direcion: /^[a-zA-Z0-9#\s -]+$/
 };
 
 const campos = {
   text: false,
   email: false,
   checkbox: false,
+  dir: false
 };
 
 const validarFormulario = (e) => {
-  switch (e.target.type) {
+  
+  if (e.target.name != "dir") {
+    switch (e.target.type) {
     case "text":
       validarCampo(expresiones.nombres, e.target, "text");
       break;
@@ -113,6 +132,12 @@ const validarFormulario = (e) => {
       break;
     case "checkbox":
       validarSlides(e.target, "checkbox");
+      break;
+  }
+
+  }else{
+    validarCampo(expresiones.direcion, e.target, "dir")
+
   }
 };
 

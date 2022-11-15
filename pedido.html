@@ -19,6 +19,10 @@
             width: 250px;
         }
 
+        .none {
+            display: none;
+        }
+
         .card-info {
             background-color: hsl(0deg, 0%, 100%);
             border-radius: 5px;
@@ -58,16 +62,29 @@
             margin: 15px;
             padding: 5px;
             width: 250px;
+            height: 90%;
 
         }
-        h1{
+
+        h1 {
             font-size: 30px;
         }
-        .hr{
+
+        .hr {
             background-color: hsl(0deg, 0%, 29%);
             border-radius: 10px;
             width: 100%;
             height: 3px;
+        }
+
+        .producto {
+            width: 50%;
+            text-align: start;
+        }
+
+        .valor {
+            width: 100%;
+            text-align: end;
         }
     </style>
 </head>
@@ -118,9 +135,9 @@
     </nav>
     <div class="container is-fluid mt-5 has-text-centered">
         <div class="columns ">
-            
+
             <div class="column is-two-thirds">
-                
+
                 <div class="is-flex">
                     <h1>Pedido</h1>
                 </div>
@@ -134,7 +151,7 @@
                             <p>hamburguesas</p>
                         </b>
                         <span>14000$</span> <br>
-                        <input type="number" name="" id="" class="input number m-0" value="1" />
+                        <input type="number" name="" id="" class="input number m-0" value="1"  min="0"/>
                     </div>
                     <div class="card card-pedido p-5">
                         <img src="img/hamburguesa.jpg" alt="" class="img" />
@@ -142,25 +159,143 @@
                             <p>hamburguesas</p>
                         </b>
                         <span>14000$</span> <br>
-                        <input type="number" name="" id="" class="input number m-0" value="1" />
+                        <input type="number" name="" id="" class="input number m-0" value="1"  min="0"/>
                     </div>
-                    <div class="card añadir">
-                        <i class="fa-light fa-plus plus"></i>
-                    </div>
+                    <!-- envia a productos -->
+                    <a >
+                        <div class="card añadir">
+                            <i class="fa-light fa-plus plus"></i>
+                        </div>
+                    </a>
 
                 </div>
 
             </div>
             <div class="column is-one-third">
                 <div class="card card-info">
-                    <div class="card-header p-5">
-                        <h2> info</h2>
+                    <div class="card-header">
+                        <h1>Detalle</h1>
+                    </div>
+                    <div class="card-content p-6">
+                        <div class="mb-3">
+                            <div class="is-flex ">
+                                <div class="producto">
+                                    <p>hamburguesa</p>
+                                </div>
+                                <div class="valor">
+                                    <p>14000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="is-flex ">
+                                <div class="producto">
+                                    <p>hamburguesa</p>
+                                </div>
+                                <div class="valor">
+                                    <p>14000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="is-flex ">
+                                <div class="producto">
+                                    <p>IVA</p>
+                                </div>
+                                <div class="valor">
+                                    <p>1200</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="is-flex ">
+                                <div class="producto">
+                                    <p>Envio</p>
+                                </div>
+                                <div class="valor">
+                                    <p>8000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="is-flex ">
+                                <div class="producto">
+                                    <p>subtotal</p>
+                                </div>
+                                <div class="valor">
+                                    <p>28000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <div class="mb-3 p-6">
+                            <div class="is-flex">
+                                <div class="producto">
+                                    <h2>Total</h2>
+                                </div>
+                                <div class="valor">
+                                    <h2>37200</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="is-flex is-full">
+                            <div class="m-auto">
+                                <button class="button is-primary" name="cancelar"> Cancelar</button>
+                                <button class="button is-success" name="buy"> Comprar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal modal-buy">
+        <form class="form-buy">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Comprar</p>
+                    <button class="delete" aria-label="close" name="buy">
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns is-centered">
+                            <div class="column is-half">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Dirrecion:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control">
+                                                <input class="input" type="text" placeholder="" name="dir"
+                                                    value="Cll 55 #45-50">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field-body">
+                                    <div class="select" style="min-width: 100%;">
+                                        <select style="min-width: 100%;">
+                                            <option>Efectivo</option>
+                                            <option>Transferencia </option>
+                                        </select>
+                                    </div>
+                                </div>
 
+
+                            </div>
+                        </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button cancel is-primary" name="buy">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+            </div>
+        </form>
+    </div>
     <script src="js/main.js"></script>
 </body>
 
