@@ -5031,7 +5031,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     margin-left: auto;
   }
   .navbar-dropdown {
-    background-color: hsl(0deg, 0%, 100%);
+    background-color: #cf2924;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     border-top: 2px solid hsl(0deg, 0%, 86%);
