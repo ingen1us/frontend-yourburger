@@ -70,7 +70,7 @@ allButtons.forEach((btn) => {
         if (!haySlides) {
           campos["checkbox"] = true;
         }
-        if (!haydirr) {
+        if (!haydir) {
           campos["dir"] = true;
         }
       }
@@ -87,11 +87,25 @@ allButtons.forEach((btn) => {
       if (campos.text && campos.email && campos.checkbox) {
         toggleForm();
       } else {
+        crearNotificacion(
+          activeForm.parentElement.querySelector(".notifications"),
+          "error",
+          activeName == "new"
+            ? "Rellene todos los campos"
+            : "No se detectaron cambios"
+        );
       }
-      if (campos.dir && campos.checkbox) {
-        toggleForm();
-      }else{
 
+      if (campos.dir && campos.checkbox && haydir == true) {
+        toggleForm();
+      } else {
+        crearNotificacion(
+          activeForm.parentElement.querySelector(".notifications"),
+          "error",
+          activeName == "new"
+            ? "Rellene todos los campos"
+            : "No se detectaron cambios"
+        );
       }
     });
 
@@ -99,9 +113,9 @@ allButtons.forEach((btn) => {
       toggleForm();
     } else if (this.name == "edit") {
       toggleForm();
-    } else if(this.name == "buy") {
+    } else if (this.name == "buy") {
       toggleForm();
-    } 
+    }
   };
 });
 
@@ -110,34 +124,31 @@ const expresiones = {
   contrasena: /^.{4-12}$/,
   correo: /^[a-zA-Z0-9.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
   telefono: /^\d{10}$/,
-  direcion: /^[a-zA-Z0-9#\s -]+$/
+  direcion: /^[a-zA-Z0-9#\s -]+$/,
 };
 
 const campos = {
   text: false,
   email: false,
   checkbox: false,
-  dir: false
+  dir: false,
 };
 
 const validarFormulario = (e) => {
-  
   if (e.target.name != "dir") {
     switch (e.target.type) {
-    case "text":
-      validarCampo(expresiones.nombres, e.target, "text");
-      break;
-    case "email":
-      validarCampo(expresiones.correo, e.target, "email");
-      break;
-    case "checkbox":
-      validarSlides(e.target, "checkbox");
-      break;
-  }
-
-  }else{
-    validarCampo(expresiones.direcion, e.target, "dir")
-
+      case "text":
+        validarCampo(expresiones.nombres, e.target, "text");
+        break;
+      case "email":
+        validarCampo(expresiones.correo, e.target, "email");
+        break;
+      case "checkbox":
+        validarSlides(e.target, "checkbox");
+        break;
+    }
+  } else {
+    validarCampo(expresiones.direcion, e.target, "dir");
   }
 };
 
@@ -173,3 +184,31 @@ const validarCampo = (expresion, input, campo) => {
     campos[campo] = false;
   }
 };
+
+// NOTIFICACIONES
+
+// CREAR NOTIFICACION
+function crearNotificacion(elem, type, msg) {
+  elem.innerHTML = `
+  <div class="notification has-text-centered is-${type} mt-5">
+      ${msg}
+  </div>`;
+
+  setTimeout(() => {
+    elem.innerHTML = "";
+  }, 3000);
+}
+
+// CERRAR NOTIFICACIONES
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   (document.querySelectorAll(".notification .delete") || []).forEach(
+//     ($delete) => {
+//       const $notification = $delete.parentNode;
+
+//       $delete.addEventListener("click", () => {
+//         $notification.parentNode.removeChild($notification);
+//       });
+//     }
+//   );
+// });

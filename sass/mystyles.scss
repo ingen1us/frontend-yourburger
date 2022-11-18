@@ -9,6 +9,8 @@ $secondary-color: #FFEDB9;
 $beige-lighter: #EFF0EB;
 $gray-light: #DBDBDA;
 
+$custom-colors: ("error": ($primary-color, #fff));
+
 // Update Bulma's global variables
 $family-sans-serif: "Karla", sans-serif;
 $primary: $primary-color;
@@ -42,6 +44,7 @@ $control-border-width: 2px;
 @import "../node_modules/bulma/sass/elements/title.sass";
 @import "../node_modules/bulma/sass/elements/icon.sass";
 @import "../node_modules/bulma/sass/elements/other.sass";
+@import "../node_modules/bulma/sass/elements/notification.sass";
 
 @import "../node_modules/bulma/sass/form/_all.sass";
 
