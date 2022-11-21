@@ -1,0 +1,356 @@
+<!-- esto es la vista admin ya tu sabes -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <script src="https://kit.fontawesome.com/f02518bebc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/switch.css">
+    <link rel="stylesheet" href="./css/responsive-table.css">
+    <style>
+        .producto {
+            width: 50%;
+            text-align: start;
+        }
+
+        .valor {
+            width: 100%;
+            text-align: end;
+        }
+        .card-info {
+            background-color: hsl(0deg, 0%, 100%);
+            border-radius: 5px;
+            border: 2px solid;
+        }
+        h1 {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="img/only-text.png" width="110">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample" onclick="toggleMenu()">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item " href="usuarios.html">
+                    Usuarios
+                </a>
+
+                <a class="navbar-item" href="clientes.html">
+                    Clientes
+                </a>
+
+                <a class="navbar-item">
+                    Productos
+                </a>
+
+                <a class="navbar-item is-active" href="pedido.html">
+                    Pedidos
+                </a>
+
+                <a class="navbar-item" href="roles.html">
+                    Roles
+                </a>
+
+                <a class="navbar-item" href="ventas.html">
+                    Ventas
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Yeiner Naranjo
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            Cerrar sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container is-fluid mt-5">
+        <div class="columns is-centered">
+            <div class="column is-narrow">
+                <a  href="pedido.html"class="button is-success is-fullwidth" name="new">Crear Pedido +</a>
+            </div>
+            <div class="column is-9">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Buscar usuario">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="column is-narrow">
+                <button class="button is-primary is-fullwidth">Generar PDF</button>
+            </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table class=" table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Fecha actualizacion</th>
+                        <th>Estado</th>
+                        <th>Valor</th>
+                        <th>Detalles</th>
+                        <th>Editar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" data-label="id">3</td>
+                        <td data-label="Cliente">Yeiner</td>
+                        <td data-label="Fecha">04/11/22</td>
+                        <td data-label="Fecha_act">04/11/22</td>
+                        <td data-label="Estado">Por Enviado</td>
+                        <td data-label="Valor">30000</td>
+                        <td data-label="detalle" class="pl-5">
+                            <button class="button detalle is-info" name="detalle">
+                                <span class="icon">
+                                    <i class="fa-solid fa-info"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" data-label="id">2</td>
+                        <td data-label="Cliente">Yeiner</td>
+                        <td data-label="Fecha">04/07/22</td>
+                        <td data-label="Fecha_act">04/07/22</td>
+                        <td data-label="Estado">Cancelado</td>
+                        <td data-label="Valor">15000</td>
+                        <td data-label="detalle" class="pl-5">
+                            <button class="button detalle is-info" name="detalle">
+                                <span class="icon">
+                                    <i class="fa-solid fa-info"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" data-label="id">1</td>
+                        <td data-label="Cliente">Julian</td>
+                        <td data-label="Fecha">08/12/21</td>
+                        <td data-label="Fecha_act">08/12/21</td>
+                        <td data-label="Estado">Enviado</td>
+                        <td data-label="Valor">50000</td>
+                        <td data-label="detalle" class="pl-5">
+                            <button class="button detalle is-info" name="detalle">
+                                <span class="icon">
+                                    <i class="fa-solid fa-info"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" data-label="id">0</td>
+                        <td data-label="Cliente">Ana</td>
+                        <td data-label="Fecha">04/05/22</td>
+                        <td data-label="Fecha_act">04/05/21</td>
+                        <td data-label="Estado">Enviado</td>
+                        <td data-label="Valor">45000</td>
+                        <td data-label="detalle" class="pl-5">
+                            <button class="button detalle is-info" name="detalle">
+                                <span class="icon">
+                                    <i class="fa-solid fa-info"></i>
+                                </span>
+                            </button>
+                        </td>
+                        <td data-label="editar">
+                            <button class="button edit is-warning" name="edit">
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal modal-detalle">
+        <form class="form-detalle">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Detalle Pedido</p>
+                    <button class="delete" aria-label="close" name="detalle">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns is-centered">
+                            <div class="column is-half">
+
+                                <div class="card card-info">
+                                    <div class="card-content p-6">
+                                        <div class="mb-3">
+                                            <div class="is-flex ">
+                                                <div class="producto">
+                                                    <p>hamburguesa</p>
+                                                </div>
+                                                <div class="valor">
+                                                    <p>14000</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="is-flex ">
+                                                <div class="producto">
+                                                    <p>hamburguesa</p>
+                                                </div>
+                                                <div class="valor">
+                                                    <p>14000</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="is-flex ">
+                                                <div class="producto">
+                                                    <p>IVA</p>
+                                                </div>
+                                                <div class="valor">
+                                                    <p>1200</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="is-flex ">
+                                                <div class="producto">
+                                                    <p>Envio</p>
+                                                </div>
+                                                <div class="valor">
+                                                    <p>8000</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="is-flex ">
+                                                <div class="producto">
+                                                    <p>subtotal</p>
+                                                </div>
+                                                <div class="valor">
+                                                    <p>28000</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+                                        <div class="mb-3 p-6">
+                                            <div class="is-flex">
+                                                <div class="producto">
+                                                    <h2>Total</h2>
+                                                </div>
+                                                <div class="valor">
+                                                    <h2>37200</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button cancel is-primary" name="detalle">Volver</button>
+                </footer>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal modal-edit">
+        <form class="form-edit">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Editar Usuario</p>
+                    <button class="delete" name="edit" aria-label="close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns is-centered">
+                            <div class="column is-half">
+                                <div class="field is-vertical">
+                                    <div class=" field-label">
+                                        <label class="label has-text-centered">Estado:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="select" style="min-width: 100%;">
+                                            <select style="min-width: 100%;">
+                                                <option selected>Enviado</option>
+                                                <option>Por Enviar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button cancel is-primary" name="edit">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+                <div class="notifications"></div>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

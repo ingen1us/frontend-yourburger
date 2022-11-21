@@ -26,6 +26,8 @@ let allButtons = document.querySelectorAll("button");
 let hayEmail = false;
 let haySlides = false;
 let haydir = false;
+let haySelect = false;
+let Select = document.querySelector("div.select select");
 
 allButtons.forEach((btn) => {
   btn.onclick = function () {
@@ -46,6 +48,7 @@ allButtons.forEach((btn) => {
         campos["email"] = false;
         campos["checkbox"] = false;
         campos["dir"] = false;
+        campos["select"] = false;
         document
           .querySelector(`.modal-${btn.name}`)
           .classList.remove("is-active");
@@ -63,7 +66,12 @@ allButtons.forEach((btn) => {
           if (inp.name == "dir") {
             haydir = true;
           }
+          
         });
+        if (document.querySelector("div.select select")) {
+            haySelect=true;
+            console.log("hay select")
+          }
         if (!hayEmail) {
           campos["email"] = true;
         }
@@ -73,6 +81,9 @@ allButtons.forEach((btn) => {
         if (!haydir) {
           campos["dir"] = true;
         }
+        if (!haySelect) {
+          campos["select"] = true;
+        }
       }
     }
 
@@ -81,6 +92,15 @@ allButtons.forEach((btn) => {
       input.addEventListener("blur", validarFormulario);
       input.addEventListener("change", validarFormulario);
     });
+    if (Select) {
+      Select.addEventListener("keyup", validarFormulario);
+      Select.addEventListener("blur", validarFormulario);
+      Select.addEventListener("change", validarFormulario);
+    }
+
+    
+    
+    
 
     activeForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -98,6 +118,7 @@ allButtons.forEach((btn) => {
 
       if (campos.dir && campos.checkbox && haydir == true) {
         toggleForm();
+        
       } else {
         crearNotificacion(
           activeForm.parentElement.querySelector(".notifications"),
@@ -107,6 +128,21 @@ allButtons.forEach((btn) => {
             : "No se detectaron cambios"
         );
       }
+      if (campos.select && haySelect == true) {
+        toggleForm();
+        console.log("todo bien")
+
+      } else {
+        console.log("no confirmo validacion")
+        crearNotificacion(
+          activeForm.parentElement.querySelector(".notifications"),
+          "error",
+          activeName == "new"
+            ? "Rellene todos los campos"
+            : "No se detectaron cambios"
+            
+        );
+      }
     });
 
     if (this.name == "new") {
@@ -114,6 +150,8 @@ allButtons.forEach((btn) => {
     } else if (this.name == "edit") {
       toggleForm();
     } else if (this.name == "buy") {
+      toggleForm();
+    } else if(this.name == "detalle") {
       toggleForm();
     }
   };
@@ -132,10 +170,14 @@ const campos = {
   email: false,
   checkbox: false,
   dir: false,
+  select : false
 };
 
 const validarFormulario = (e) => {
+  console.log("valida form")
   if (e.target.name != "dir") {
+    console.log("nombre diferente")
+
     switch (e.target.type) {
       case "text":
         validarCampo(expresiones.nombres, e.target, "text");
@@ -146,6 +188,11 @@ const validarFormulario = (e) => {
       case "checkbox":
         validarSlides(e.target, "checkbox");
         break;
+      case "select-one":
+        ValidarSelect(e.target, "select");
+
+        break;
+
     }
   } else {
     validarCampo(expresiones.direcion, e.target, "dir");
@@ -184,6 +231,22 @@ const validarCampo = (expresion, input, campo) => {
     campos[campo] = false;
   }
 };
+
+const ValidarSelect =(input,campo) => {
+  console.log("entra a validar")
+  
+  
+    if (input.value != 0) {
+      campos[campo] = true;
+
+    }else{
+      campos[campo] = false;
+
+    }
+  
+  
+
+}
 
 // NOTIFICACIONES
 

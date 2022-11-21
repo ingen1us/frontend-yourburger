@@ -142,11 +142,9 @@
 
                 <div class="is-flex">
                     <div class="is-justify-content-flex-start mr-auto">
-                        <h1>Pedido</h1>
+                        <h1>Ventaa</h1>
                     </div>
-                    <div class="is-justify-content-flex-end ml-auto  mt-3">
-                        <a class="button is-warning " href="tusPedido.html"> Tus pedidos</a>
-                    </div>
+                    
                 </div>
                 <div class="hr"></div>
 
@@ -251,59 +249,13 @@
                         <div class="is-flex is-full">
                             <div class="m-auto pb-5">
                                 <button class="button is-primary mr-3" name="cancelar"> Cancelar</button>
-                                <button class="button is-success" name="buy"> Comprar</button>
+                                <a href="ventas.html" class="button is-success" name="confirmar"> Confirmar</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal modal-buy">
-        <form class="form-buy">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Comprar</p>
-                    <button class="delete" aria-label="close" name="buy">
-                    </button>
-                </header>
-                <section class="modal-card-body">
-                    <div class="container">
-                        <div class="columns is-centered">
-                            <div class="column is-half">
-                                <div class="field is-vertical">
-                                    <div class="field-label">
-                                        <label class="label has-text-centered">Dirrecion:</label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input" type="text" placeholder="" name="dir"
-                                                    value="Cll 55 #45-50">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="field-body">
-                                    <div class="select" style="min-width: 100%;">
-                                        <select style="min-width: 100%;">
-                                            <option>Efectivo</option>
-                                            <option>Transferencia </option>
-                                        </select>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                </section>
-                <footer class=" modal-card-foot">
-                    <button class="button cancel is-primary" name="buy">Cancelar</button>
-                    <button class="button is-success" type="submit">Confirmar</button>
-                </footer>
-            </div>
-        </form>
     </div>
     <script src="js/main.js"></script>
 </body>
