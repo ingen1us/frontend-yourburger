@@ -71,9 +71,10 @@
     </nav>
 
     <div class="container is-fluid mt-5">
+        <div class="notifications"></div>
         <div class="columns is-centered">
             <div class="column is-narrow">
-                <button class="button is-success is-fullwidth" name="new">Crear Usuario +</button>
+                <button class="button is-success is-fullwidth" type="button" name="new">Crear Usuario +</button>
             </div>
             <div class="column is-9">
                 <div class="control has-icons-left">
@@ -123,7 +124,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteUser" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -150,7 +151,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteUser" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -177,7 +178,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteUser" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -204,7 +205,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteUser" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -214,6 +215,7 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
     <div class="modal modal-new">
@@ -222,7 +224,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Nuevo Usuario</p>
-                    <button class="delete" aria-label="close" name="new">
+                    <button class="delete" aria-label="close" name="new" type="button">
 
                     </button>
                 </header>
@@ -293,8 +295,13 @@
                         </div>
                 </section>
                 <footer class=" modal-card-foot">
+<<<<<<< HEAD
                     <button class="button cancel is-primary" name="new">Cancelar</button>
                     <input type="submit" class="button is-success" value="Confirmar"></input>
+=======
+                    <button class="button cancel is-primary" name="new" type="button">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+>>>>>>> 10b74d9f99393cdb0e17610559f313afe39770b1
                 </footer>
                 <div class="notifications"></div>
             </div>
@@ -307,7 +314,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Editar Usuario</p>
-                    <button class="delete" name="edit" aria-label="close">
+                    <button class="delete" name="edit" aria-label="close" type="button">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </header>
@@ -364,8 +371,13 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
+<<<<<<< HEAD
                     <button class="button cancel is-primary" name="edit">Cancelar</button>
                     <input value="Confirmar" class="button is-success" type="submit"></input>
+=======
+                    <button class="button cancel is-primary" type="button" name="edit">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+>>>>>>> 10b74d9f99393cdb0e17610559f313afe39770b1
                 </footer>
                 <div class="notifications"></div>
             </div>

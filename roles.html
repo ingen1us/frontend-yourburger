@@ -118,7 +118,7 @@
                         </button>
                     </td>
                     <td data-label="eliminar">
-                        <button class="button is-primary">
+                        <button class="button is-primary" type="button" name="deleteRol">
                             <span class="icon">
                                 <i class="fa-solid fa-trash"></i>
                             </span>
@@ -144,7 +144,7 @@
                         </button>
                     </td>
                     <td data-label="eliminar">
-                        <button class="button is-primary">
+                        <button class="button is-primary" type="button" name="deleteRol">
                             <span class="icon">
                                 <i class="fa-solid fa-trash"></i>
                             </span>
@@ -153,6 +153,7 @@
                 </tr>
             </tbody>
         </table>
+        <div class="notifications"></div>
     </div>
 
     <div class="modal modal-new">
@@ -161,7 +162,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Nuevo Rol</p>
-                    <button class="delete" aria-label="close" name="new">
+                    <button class="delete" aria-label="close" name="new" type="button">
                     </button>
                 </header>
                 <section class="modal-card-body">
@@ -287,8 +288,8 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <button class="button is-primary" name="new">Cancelar</button>
-                    <button class="button is-success">Confirmar</button>
+                    <button class="button is-primary" name="new" type="button">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
                 <div class="notifications"></div>
                 <!-- <div class="notification is-error mt-5">
@@ -305,7 +306,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Editar Rol</p>
-                    <button class="delete" name="edit" aria-label="close">
+                    <button class="delete" name="edit" aria-label="close" type="button">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </header>
@@ -432,7 +433,7 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <button class="button is-primary" name="edit">Cancelar</button>
+                    <button class="button is-primary" name="edit" type="button">Cancelar</button>
                     <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
                 <div class="notifications"></div>
