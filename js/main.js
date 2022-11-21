@@ -39,6 +39,7 @@ allButtons.forEach((btn) => {
 
     function toggleForm() {
       if (isActive) {
+        quitarNotificacion(activeForm.parentElement.querySelector(".notifications"))
         document.querySelector(`.form-${btn.name}`).reset();
         activeInputs.forEach((inp) => {
           inp.classList.remove("is-success");
@@ -66,12 +67,11 @@ allButtons.forEach((btn) => {
           if (inp.name == "dir") {
             haydir = true;
           }
-          
+
         });
         if (document.querySelector("div.select select")) {
-            haySelect=true;
-            console.log("hay select")
-          }
+          haySelect = true;
+        }
         if (!hayEmail) {
           campos["email"] = true;
         }
@@ -98,12 +98,13 @@ allButtons.forEach((btn) => {
       Select.addEventListener("change", validarFormulario);
     }
 
-    
-    
-    
+
+
+
 
     activeForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
       if (campos.text && campos.email && campos.checkbox) {
         toggleForm();
       } else {
@@ -118,7 +119,6 @@ allButtons.forEach((btn) => {
 
       if (campos.dir && campos.checkbox && haydir == true) {
         toggleForm();
-        
       } else {
         crearNotificacion(
           activeForm.parentElement.querySelector(".notifications"),
@@ -128,19 +128,18 @@ allButtons.forEach((btn) => {
             : "No se detectaron cambios"
         );
       }
+
       if (campos.select && haySelect == true) {
         toggleForm();
-        console.log("todo bien")
 
       } else {
-        console.log("no confirmo validacion")
         crearNotificacion(
           activeForm.parentElement.querySelector(".notifications"),
           "error",
           activeName == "new"
             ? "Rellene todos los campos"
             : "No se detectaron cambios"
-            
+
         );
       }
     });
@@ -151,7 +150,7 @@ allButtons.forEach((btn) => {
       toggleForm();
     } else if (this.name == "buy") {
       toggleForm();
-    } else if(this.name == "detalle") {
+    } else if (this.name == "detalle") {
       toggleForm();
     }
   };
@@ -170,13 +169,11 @@ const campos = {
   email: false,
   checkbox: false,
   dir: false,
-  select : false
+  select: false
 };
 
 const validarFormulario = (e) => {
-  console.log("valida form")
   if (e.target.name != "dir") {
-    console.log("nombre diferente")
 
     switch (e.target.type) {
       case "text":
@@ -232,19 +229,18 @@ const validarCampo = (expresion, input, campo) => {
   }
 };
 
-const ValidarSelect =(input,campo) => {
-  console.log("entra a validar")
-  
-  
-    if (input.value != 0) {
-      campos[campo] = true;
+const ValidarSelect = (input, campo) => {
 
-    }else{
-      campos[campo] = false;
 
-    }
-  
-  
+  if (input.value != 0) {
+    campos[campo] = true;
+
+  } else {
+    campos[campo] = false;
+
+  }
+
+
 
 }
 
@@ -259,7 +255,11 @@ function crearNotificacion(elem, type, msg) {
 
   setTimeout(() => {
     elem.innerHTML = "";
-  }, 3000);
+  }, 2500);
+}
+
+function quitarNotificacion(elem) {
+  elem.innerHTML = "";
 }
 
 // CERRAR NOTIFICACIONES
