@@ -31,6 +31,15 @@ let Select = document.querySelector("div.select select");
 
 allButtons.forEach((btn) => {
   btn.onclick = function () {
+    // Si el boton tiene el name indicado se crea la notificacion
+    if (this.name == "deleteUser") {
+      crearNotificacion(document.querySelector(".container .notifications"), "error", "Usuario eliminado exitosamente!")
+    }
+
+    if (this.name == "deleteRol") {
+      crearNotificacion(document.querySelector(".container .notifications"), "error", "Rol eliminado exitosamente!")
+    }
+
     if (this.name != "") {
       activeName = this.name;
       activeForm = document.querySelector(`.form-${this.name}`);
