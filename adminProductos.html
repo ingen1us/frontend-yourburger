@@ -10,12 +10,56 @@
     <script src="https://kit.fontawesome.com/f02518bebc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/switch.css">
     <link rel="stylesheet" href="./css/responsive-table.css">
+    <link rel="stylesheet" href="css/fontello.css">
+
     <style>
         #btn-mas {
             display: none;
+
         }
 
+        .Seras {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
 
+
+
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+        .carrito a,
+        .icon-mas2 {
+            display: block;
+            text-decoration: none;
+            background: #cc2b2b;
+            color: #fff;
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+            transition: all 500ms ease;
+        }
+
+        .carrito a:hover {
+            background: #fff;
+            color: #cc2b2b;
+        }
+
+        .carrito a {
+            margin-bottom: -15px;
+        }
+
+        .Vermas {
+            width: 100px;
+            color: black;
+        }
 
         .producto {
             width: 50%;
@@ -63,11 +107,6 @@
             width: 60px;
         }
 
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
-            display: block;
-        }
-
         span {
             width: 200px;
         }
@@ -98,24 +137,47 @@
             width: 100%;
             text-align: end;
         }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider::before {
+            -webkit-transform: translateX(29px);
+            -ms-transform: translateX(29px);
+            transform: translateX(29px);
+            content: 'A';
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        input+.slider::before {
+            content: 'I';
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <input type="checkbox" id="btn-mas">
-        <div class="redes">
-            <a href="#" class="icon-carrito"></a>
-
-        </div>
-
-    </div>
-    <div class="btn-mas">
-        <label for="btn-mas" class="icon-mas2">
-        </label>
-
-    </div>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="index.html">
@@ -140,11 +202,11 @@
                     Clientes
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item is-active" href="producto.html">
                     Productos
                 </a>
 
-                <a class="navbar-item is-active" href="pedido.html">
+                <a class="navbar-item" href="pedido.html">
                     Pedidos
                 </a>
 
@@ -175,8 +237,8 @@
 
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
-            <div class="column is-narrow ">
-                <h2 class="">Productos</h2>
+            <div class="column is-narrow">
+                <button class="button is-success is-fullwidth" type="button" name="new">Crear Producto +</button>
             </div>
             <div class="column is-8">
                 <div class="control has-icons-left">
@@ -187,7 +249,7 @@
                 </div>
             </div>
             <div class="column is-narrow">
-                <a href="adminProductos.html" class="button is-primary is-fullwidth">Administrar Productos</a>
+                <a href="producto.html" class="button is-primary is-fullwidth">Productos</a>
             </div>
         </div>
         <div class="hr"></div>
@@ -196,42 +258,141 @@
 
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+
+
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
 
@@ -240,42 +401,139 @@
 
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
 
@@ -284,49 +542,750 @@
 
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
             <div class="column is-one-fifth">
                 <div class="card card-pedido p-5">
+                    <div class="is-flex">
+                        <div class="container" class="has-text-centered">
+
+                            <div class="is-justify-content-flex-start mt-3">
+                                <button class="button edit is-warning" name="edit">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </span>
+                                </button>
+                                <button class="button is-primary" name="deleteUser" type="button">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                                <td data-label="estado">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round" style="width: 65px ; height:38px;"></span>
+                                    </label>
+                                </td>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
                     <img src="img/hamburguesa.jpg" alt="" class="img" />
                     <b>
                         <p>hamburguesas</p>
                     </b>
                     <span>14000$</span> <br>
-                    <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
                 </div>
             </div>
 
         </div>
-
-
     </div>
+    <!-- Comienza Creacion de modal-->
+    <div class="modal modal-new">
+        <form class="form-new">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Nuevo Producto</p>
+                    <button class="delete" aria-label="close" name="new" type="button">
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="" value="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-utensils"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Imagen:</label>
+                                        <br>
+                                        <div class="columns is-centered">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3820/3820184.png" alt=""
+                                                class="img" />
+                                        </div>
+                                        <br>
+                                        <div class="field-label">
+                                            <label class="label has-text-centered">Precio:</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control has-icons-left">
+                                                    <input class="input" type="number" placeholder="" value="$
+                                                    ">
+                                                    <span class="icon is-small is-left">
+                                                        <i class="fa-sharp fa-solid fa-dollar-sign"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <br>
+
+                                        <div class="field-label">
+                                            <label class="label has-text-centered">Ingredientes:</label>
+                                        </div>
+                                        <div class="field">
+                                            <div class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="Buscar ingrediente">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="container has-text-centered ">
+                            <h1 class="title">Ingredientes</h1>
+                        </div> -->
+                        <div class="slides">
+                            <div class="columns is-centered has-text-centered">
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Tomate</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Cebolla</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Tocino</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-centered has-text-centered">
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Papitas</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Queso</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Lechuga</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="field-label">
+                            <label class="label has-text-centered">Adiciones:</label>
+                        </div>
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <input class="input" type="text" placeholder="Buscar Adición">
+                                <span class="icon is-small is-left">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="slides">
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Tomate</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Cebolla</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Tocino</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Papitas</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Queso</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Lechuga</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" name="new" type="button">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+                <div class="notifications"></div>
+                <!-- <div class="notification is-error mt-5">
+                    <button class="delete"></button>
+                    Rellene todos los campos
+                </div> -->
+            </div>
+        </form>
+    </div>
+    <!-- 
+                Modal de editar -->
+    <div class="modal modal-edit">
+        <form class="form-edit">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Editar Producto</p>
+                    <button class="delete" name="edit" aria-label="close" type="button">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="" value="hamburguesas">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-utensils"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Imagen:</label>
+                                        <br>
+                                        <div class="columns is-centered">
+                                            <img src="img/hamburguesa.jpg" alt="" class="img" />
+                                        </div>
+                                        <br>
+                                        <div class="field-label">
+                                            <label class="label has-text-centered">Precio:</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control has-icons-left">
+                                                    <input class="input" type="number" placeholder="" value="14000"
+                                                     >
+                                                    <span class="icon is-small is-left">
+                                                        <i class="fa-sharp fa-solid fa-dollar-sign"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <br>
+
+                                        <div class="field-label">
+                                            <label class="label has-text-centered">Ingredientes:</label>
+                                        </div>
+                                        <div class="field">
+                                            <div class="control has-icons-left">
+                                                <input class="input" type="search" placeholder="Buscar ingrediente">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="container has-text-centered ">
+                            <h1 class="title">Ingredientes</h1>
+                        </div> -->
+                        <div class="slides">
+                            <div class="columns is-centered has-text-centered">
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Tomate</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Cebolla</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Tocino</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-centered has-text-centered">
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Papitas</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Queso</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Lechuga</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <button class="button is-primary" name="deleteUser" type="button">
+                                                    <span class="icon">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="field-label">
+                            <label class="label has-text-centered">Adiciones:</label>
+                        </div>
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <input class="input" type="search" placeholder="Buscar Adición">
+                                <span class="icon is-small is-left">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="slides">
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Tomate</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Cebolla</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Tocino</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns is-centered has-text-centered">
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Papitas</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Queso</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="field">
+                                    <div class="field-label" style="margin-right: 0">
+                                        <label class="label has-text-centered">Lechuga</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <button class="button is-primary" name="deleteUser" type="button">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" name="edit" type="button">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+                <div class="notifications"></div>
+            </div>
+        </form>
+    </div>
+    <!-- Termina Creacion de modal-->
+
     <script src="js/main.js"></script>
 </body>
 

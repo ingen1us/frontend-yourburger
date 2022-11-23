@@ -10,7 +10,62 @@
     <script src="https://kit.fontawesome.com/f02518bebc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/switch.css">
     <link rel="stylesheet" href="./css/responsive-table.css">
+    <link rel="stylesheet" href="css/fontello.css">
     <style>
+        #btn-mas {
+            display: none;
+
+        }
+
+        .Seras {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+
+
+
+        }
+
+        .carrito {
+            display: block;
+            text-decoration: none;
+            background: #cc2b2b;
+            color: #fff;
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+            transition: all 500ms ease;
+            background-image: url("https://cdn-icons-png.flaticon.com/512/5087/5087847.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 9;
+        }
+
+        .column {
+            z-index: 0;
+        }
+
+        .carrito a:hover {
+            background: #fff;
+            color: #cc2b2b;
+            cursor: pointer;
+            ;
+        }
+
+        .carrito a {
+            margin-bottom: -15px;
+        }
+
+        .Vermas {
+            width: 100px;
+            color: black;
+        }
+
         .producto {
             width: 50%;
             text-align: start;
@@ -92,10 +147,24 @@
             width: 100%;
             text-align: end;
         }
+
+        .mt-3>.button {
+            width: 90px;
+        }
+
+        .a {
+            width: 50px;
+        }
     </style>
+    <script>
+        const link = () => {
+            window.location.href = "index.html"
+        }
+    </script>
 </head>
 
 <body>
+
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="index.html">
@@ -120,11 +189,11 @@
                     Clientes
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item is-active" href="producto.html">
                     Productos
                 </a>
 
-                <a class="navbar-item is-active" href="pedido.html">
+                <a class="navbar-item" href="pedido.html">
                     Pedidos
                 </a>
 
@@ -152,6 +221,7 @@
             </div>
         </div>
     </nav>
+
 
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
@@ -182,6 +252,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -192,6 +273,18 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -202,6 +295,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -212,6 +316,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -226,6 +341,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -236,6 +362,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -246,6 +383,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -256,6 +404,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -270,6 +429,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -280,6 +450,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -290,6 +471,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-one-fifth">
@@ -300,6 +492,17 @@
                     </b>
                     <span>14000$</span> <br>
                     <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="is-flex">
+                        <div class="is-justify-content-flex-start mt-3">
+                            <button class="button edit is-warning" name="edit">
+                                Ver mas...
+                            </button>
+                        </div>
+                        <div class="is-justify-content-flex-end ml-auto mt-3">
+                            <a href="" class="button is-success is-fullwidth" name="new">Agregar +</a>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -307,6 +510,177 @@
 
 
     </div>
+    <!-- 
+                    Modal de editar -->
+    <div class="modal modal-edit">
+        <form class="form-edit">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Detalles</p>
+                    <button class="delete" name="edit" aria-label="close" type="button">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <section class="modal-card-body has-text-centered">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field is-vertical">
+                                    <!-- <div class="field-label">
+                                        <label class="label has-text-centered">Nombre:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="" value="hamburguesas"
+                                                    readonly>
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-utensils"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Imagen:</label>
+                                        <br>
+                                        <div class="columns is-centered">
+                                            <img src="img/hamburguesa.jpg" alt="" class="img" />
+                                        </div>
+                                        <br>
+                                        <div class="field-label">
+                                            <label class="label has-text-centered">Precio:</label>
+                                        </div>
+                                        <div class="field-label ">
+                                            <label class="label has-text-centered">
+                                                <h3>14000$</h3>
+                                            </label>
+                                        </div>
+                                        <br>
+                                        <div class="field-label">
+                                            <label class="label has-text-centered">Descripcion:</label>
+                                        </div>
+                                        <p>Esta Hamburguesa Artesanal esta hecha con 50 gr de carne de res molida </p>
+
+                                        <br>
+
+                                        <div class="field-label">
+                                            <label class="label has-text-centered">Ingredientes:</label>
+                                        </div>
+
+
+                                    </div> -->
+
+                                    <div class="has-text-centered">
+                                        <div class="">
+                                            <h3 style="color:black ;">Nombre:</h3>
+                                            <h4>Hamburguesa</h4>
+                                        </div>
+                                        <div class="is-centered">
+                                            <img src="img/hamburguesa.jpg" alt="" class="img" />
+                                        </div>
+                                        <br>
+                                        <div class="">
+                                            <h3 style="color:black ;">Descripción:</h3>
+                                            <p>Esta Hamburguesa Artesanal esta hecha con 50 gr de carne de res molida
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="container has-text-centered ">
+                                <h1 class="title">Ingredientes</h1>
+                            </div> -->
+                        <div class="slides">
+                            <div class="columns is-centered has-text-centered">
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Tomate</label>
+                                        </div>
+                                        <div class="field-body">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Cebolla</label>
+                                        </div>
+                                        <div class="field-body">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Tocino</label>
+                                        </div>
+                                        <div class="field-body">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-centered has-text-centered">
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Papitas</label>
+                                        </div>
+                                        <div class="field-body">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Queso</label>
+                                        </div>
+                                        <div class="field-body">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <div class="field-label" style="margin-right: 0">
+                                            <label class="label has-text-centered">Lechuga</label>
+                                        </div>
+                                        <div class="field-body">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+
+                    </div>
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" name="edit" type="button">Cerrar</button>
+                </footer>
+                <div class="notifications"></div>
+            </div>
+        </form>
+    </div>
+    <!-- Termina Creacion de modal-->
+
+
+    <a href="pedido.html">
+        <div class="Seras">
+            <div class="carrito">
+            </div>
+        </div>
+    </a>
     <script src="js/main.js"></script>
 </body>
 
