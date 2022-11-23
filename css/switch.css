@@ -1,5 +1,15 @@
+body {
+    margin-top: 84px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
 .notifications {
-    position: absolute;
+    position: fixed;
     margin-left: auto;
     margin-right: auto;
     top: -20px;
