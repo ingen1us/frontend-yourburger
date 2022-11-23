@@ -8,7 +8,7 @@ body {
     top: 0;
 }
 
-.notifications {
+.float {
     position: fixed;
     margin-left: auto;
     margin-right: auto;

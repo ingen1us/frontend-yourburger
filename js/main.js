@@ -44,7 +44,7 @@ allButtons.forEach((btn) => {
     if (this.name == "deleteRol") {
       crearNotificacion(
         document.querySelector(".container .notifications"),
-        "error",
+        "warning",
         "Rol eliminado exitosamente!"
       );
     }
@@ -58,6 +58,9 @@ allButtons.forEach((btn) => {
     function toggleForm() {
       if (isActive) {
         document.querySelector(`.form-${btn.name}`).reset();
+        eliminarNotificaciones(
+          activeForm.parentElement.querySelector(".notifications")
+        );
         activeInputs.forEach((inp) => {
           inp.classList.remove("is-success");
           inp.classList.remove("is-danger");
@@ -91,7 +94,6 @@ allButtons.forEach((btn) => {
         });
         if (document.querySelector("div.select select")) {
           haySelect = true;
-          console.log("hay select");
         }
         if (!hayEmail) {
           campos["email"] = true;
@@ -132,8 +134,26 @@ allButtons.forEach((btn) => {
             : "No se detectaron cambios"
         );
       }
+
       if (campos.text && campos.email && campos.checkbox) {
         toggleForm();
+        if (location.pathname.substring(1) == "usuarios.html") {
+          crearNotificacion(
+            document.querySelector(".container .notifications"),
+            "success",
+            activeName == "new"
+              ? "Usuario creado con exito!"
+              : "Los datos del usuario han sido actualizados!"
+          );
+        } else if (location.pathname.substring(1) == "roles.html") {
+          crearNotificacion(
+            document.querySelector(".container .notifications"),
+            "success",
+            activeName == "new"
+              ? "Rol creado con exito!"
+              : "Rol editado exitosamente!"
+          );
+        }
       } else {
         crearNotificacion(
           activeForm.parentElement.querySelector(".notifications"),
@@ -157,9 +177,7 @@ allButtons.forEach((btn) => {
       }
       if (campos.select && haySelect == true) {
         toggleForm();
-        console.log("todo bien");
       } else {
-        console.log("no confirmo validacion");
         crearNotificacion(
           activeForm.parentElement.querySelector(".notifications"),
           "error",
@@ -201,7 +219,6 @@ const campos = {
 };
 
 const validarFormulario = (e) => {
-  console.log("valida form");
   if (e.target.name != "dir") {
     switch (e.target.type) {
       case "text":
@@ -260,8 +277,6 @@ const validarCampo = (expresion, input, campo) => {
 };
 
 const ValidarSelect = (input, campo) => {
-  console.log("entra a validar");
-
   if (input.value != 0) {
     campos[campo] = true;
   } else {
@@ -275,12 +290,16 @@ const ValidarSelect = (input, campo) => {
 function crearNotificacion(elem, type, msg) {
   elem.innerHTML = `
   <div class="notification has-text-centered is-${type} mt-5">
-      ${msg}
+      <b>${msg}</b>
   </div>`;
 
   setTimeout(() => {
     elem.innerHTML = "";
   }, 3000);
+}
+
+function eliminarNotificaciones(elem) {
+  elem.innerHTML = "";
 }
 
 // CERRAR NOTIFICACIONES
