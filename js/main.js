@@ -36,7 +36,7 @@ allButtons.forEach((btn) => {
     if (this.name == "deleteUser") {
       crearNotificacion(
         document.querySelector(".container .notifications"),
-        "error",
+        "warning",
         "Usuario eliminado exitosamente!"
       );
     }
