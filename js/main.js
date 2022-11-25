@@ -37,7 +37,8 @@ allButtons.forEach((btn) => {
       crearNotificacion(
         document.querySelector(".container .notifications"),
         "warning",
-        "Usuario eliminado exitosamente!"
+        "Usuario eliminado exitosamente!",
+        0
       );
     }
 
@@ -45,7 +46,17 @@ allButtons.forEach((btn) => {
       crearNotificacion(
         document.querySelector(".container .notifications"),
         "warning",
-        "Rol eliminado exitosamente!"
+        "Rol eliminado exitosamente!",
+        0
+      );
+    }
+
+    if (this.name == "pdf") {
+      crearNotificacion(
+        document.querySelector(".container .notifications"),
+        "warning",
+        "¿Seguro desea generar un PDF?",
+        1
       );
     }
 
@@ -131,7 +142,8 @@ allButtons.forEach((btn) => {
           "error",
           activeName == "new"
             ? "Rellene todos los campos"
-            : "No se detectaron cambios"
+            : "No se detectaron cambios",
+          0
         );
       }
 
@@ -143,7 +155,8 @@ allButtons.forEach((btn) => {
             "success",
             activeName == "new"
               ? "Usuario creado con exito!"
-              : "Los datos del usuario han sido actualizados!"
+              : "Los datos del usuario han sido actualizados!",
+            0
           );
         } else if (location.pathname.substring(1) == "roles.html") {
           crearNotificacion(
@@ -151,7 +164,8 @@ allButtons.forEach((btn) => {
             "success",
             activeName == "new"
               ? "Rol creado con exito!"
-              : "Rol editado exitosamente!"
+              : "Rol editado exitosamente!",
+            0
           );
         }
       } else {
@@ -160,7 +174,8 @@ allButtons.forEach((btn) => {
           "error",
           activeName == "new"
             ? "Rellene todos los campos"
-            : "No se detectaron cambios"
+            : "No se detectaron cambios",
+          0
         );
       }
 
@@ -172,7 +187,8 @@ allButtons.forEach((btn) => {
           "error",
           activeName == "new"
             ? "Rellene todos los campos"
-            : "No se detectaron cambios"
+            : "No se detectaron cambios",
+          0
         );
       }
       if (campos.select && haySelect == true) {
@@ -183,7 +199,8 @@ allButtons.forEach((btn) => {
           "error",
           activeName == "new"
             ? "Rellene todos los campos"
-            : "No se detectaron cambios"
+            : "No se detectaron cambios",
+          0
         );
       }
     });
@@ -287,15 +304,38 @@ const ValidarSelect = (input, campo) => {
 // NOTIFICACIONES
 
 // CREAR NOTIFICACION
-function crearNotificacion(elem, type, msg) {
-  elem.innerHTML = `
-  <div class="notification has-text-centered is-${type} mt-5">
-      <b>${msg}</b>
-  </div>`;
+function crearNotificacion(elem, type, msg, btns) {
+  if (btns == 0) {
+    elem.innerHTML = `
+      <div class="notification has-text-centered is-${type} mt-5">
+          <b>${msg}</b>
+      </div>`;
+    setTimeout(() => {
+      elem.innerHTML = "";
+    }, 3000);
+  } else if (btns == 1) {
+    elem.innerHTML = `
+    <div class="notification has-text-centered is-${type} mt-5">
+        <b>${msg}</b>
+        <br>
+        <button class="button is-small is-error mt-3" type="button" onclick="cerrarNotificacion(this)">Cancelar</button>
+        <button class="button is-small is-success mt-3 ml-4" type="button" onclick="crearPDF(this)">Confirmar</button>
+    </div>`;
+  }
+}
 
-  setTimeout(() => {
-    elem.innerHTML = "";
-  }, 3000);
+function crearPDF(e) {
+  e.parentElement.remove();
+  crearNotificacion(
+    document.querySelector(".container .notifications"),
+    "success",
+    "PDF Generado exitosamente!",
+    0
+  );
+}
+
+function cerrarNotificacion(e) {
+  e.parentElement.remove();
 }
 
 function eliminarNotificaciones(elem) {
