@@ -60,6 +60,15 @@ allButtons.forEach((btn) => {
       );
     }
 
+    if (this.name == "deleteingrediente") {
+      crearNotificacion(
+        document.querySelector(".container .notifications"),
+        "warning",
+        "Ingrediente eliminado exitosamente",
+        0
+      );
+    }
+
     if (this.name != "") {
       activeName = this.name;
       activeForm = document.querySelector(`.form-${this.name}`);
@@ -192,6 +201,30 @@ allButtons.forEach((btn) => {
         );
       }
       if (campos.select && haySelect == true) {
+        toggleForm();
+      } else {
+        crearNotificacion(
+          activeForm.parentElement.querySelector(".notifications"),
+          "error",
+          activeName == "new"
+            ? "Rellene todos los campos"
+            : "No se detectaron cambios",
+          0
+        );
+      }
+      if(campos.number){
+        toggleForm();
+      }else{
+        crearNotificacion(
+          activeForm.parentElement.querySelector(".notifications"),
+          "error",
+          activeName == "new"
+          ?"Rellene todos los campos"
+          :"No se detectaron cambios",
+          0
+        );
+      }
+      if (campos.text && campos.number && hayNumero == true) {
         toggleForm();
       } else {
         crearNotificacion(

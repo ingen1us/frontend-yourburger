@@ -29,11 +29,11 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="usuarios.html">
+                <a class="navbar-item " href="usuarios.html">
                     Usuarios
                 </a>
 
-                <a class="navbar-item is-active" href="clientes.html">
+                <a class="navbar-item" href="clientes.html">
                     Clientes
                 </a>
 
@@ -73,8 +73,9 @@
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
             <div class="column is-narrow">
-                <button class="button is-success is-fullwidth" name="new">Crear cliente+</button>
+                <button class="button is-success is-fullwidth" name="new">Crear ingrediente+</button>
             </div>
+            <div class="notifications float"></div>
             <div class="column is-9">
                 <div class="control has-icons-left">
                     <input class="input" type="text" placeholder="Buscar cliente">
@@ -82,9 +83,6 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
                 </div>
-            </div>
-            <div class="column is-narrow">
-                <button class="button is-primary is-fullwidth">Generar PDF</button>
             </div>
         </div>
 
@@ -94,118 +92,137 @@
                     <tr>
                         <th>ID</th>
                         <th>nombre </th>
-                        <th>apellido</th>
-                        <th>direccion</th>
-                        <th>documento </th>
-                        <th>Editar</th>
+                        <th>Costo adicional</th>
+                        <th>editar</th>
+                        <th>Estado </th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td scope="row" data-label="id">0</td>
-                        <td data-label="nombre">Yeiner</td>
-                        <td data-label="apellido">naranjo</td>
-                        <td data-label="direccion"> calle 11</td>
-                        <td data-label="documento ">43156456</td>
+                        <td data-label="nombre">tomate</td>
+                        <td data-label="costoadicional">500</td>
                         <td data-label="editar">
                             <button class="button edit is-warning" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
-                        </td>
-                        <td data-label="eliminar">
-                            <button class="button is-primary">
-                                <span class="icon">
-                                    <i class="fa-solid fa-trash"></i>
-                                </span>
-                            </button>
+                        </td>        
+                        
+                            <td data-label="estado">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>               
+                            <td data-label="eliminar">
+                                <button class="button is-primary" type="button" name="deleteingrediente">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                            </td>
                         </td>
                     </tr>
                     <tr>
-                        <td scope="row" data-label="id">1</td>
-                        <td data-label="nombre">Jose</td>
-                        <td data-label="apellido">alzate</td>
-                        <td data-label="direccion">calle 56</td>
-                        <td data-label="documento ">431567777</td>
+                        <td scope="row" data-label="id">0</td>
+                        <td data-label="nombre">pepino</td>
+                        <td data-label="editar">6000</td>
                         <td data-label="editar">
                             <button class="button edit is-warning" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
-                        </td>
-                        <td data-label="eliminar">
-                            <button class="button is-primary">
-                                <span class="icon">
-                                    <i class="fa-solid fa-trash"></i>
-                                </span>
-                            </button>
-                        </td>
+                        </td>        
+                        
+                            <td data-label="estado">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>               
+                            <td data-label="eliminar">
+                                <button class="button is-primary" type="button" name="deleteingrediente">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                            </td>
                     </tr>
                     <tr>
-                        <td scope="row" data-label="id">2</td>
-                        <td data-label="nombre">Ana</td>
-                        <td data-label="apellido">ana@gmail.com</td>
-                        <td data-label="direccion">calle 76</td>
-                        <td data-label="documento">43156455</td>
-
+                        <td scope="row" data-label="id">0</td>
+                        <td data-label="nombre">lechuga</td>
+                        <td data-label="editar">700</td>
                         <td data-label="editar">
                             <button class="button edit is-warning" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
-                        </td>
-                        <td data-label="eliminar">
-                            <button class="button is-primary">
-                                <span class="icon">
-                                    <i class="fa-solid fa-trash"></i>
-                                </span>
-                            </button>
-                        </td>
+                        </td>        
+                        
+                            <td data-label="estado">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>               
+                            <td data-label="eliminar">
+                                <button class="button is-primary" type="button" name="deleteingrediente">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                            </td>
                     </tr>
                     <tr>
-                        <td scope="row" data-label="id">3</td>
-                        <td data-label="nombre">Julián</td>
-                        <td data-label="apellido">julian@gmail.com</td>
-                        <td data-label="direccion">calle 87</td>
-                        <td data-label="documento">4366554</td>
+                        <td scope="row" data-label="id">0</td>
+                        <td data-label="nombre">piña</td>
+                        <td data-label="editar">2000</td>
                         <td data-label="editar">
                             <button class="button edit is-warning" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
-                        </td>
-                        <td data-label="eliminar">
-                            <button class="button is-primary">
-                                <span class="icon">
-                                    <i class="fa-solid fa-trash"></i>
-                                </span>
-                            </button>
-                        </td>
+                        </td>        
+                        
+                            <td data-label="estado">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>               
+                            <td data-label="eliminar">
+                                <button class="button is-primary" type="button" name="deleteingrediente">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </button>
+                            </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
     <div class="modal modal-new">
         <form class="form-new">
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Nuevo cliente</p>
-                    <button class="delete" aria-label="close" name="new">
-
-                    </button>
+                    <p class="modal-card-title">Nuevo Ingrediente</p>
+                    <a href="adminingredientes.html" class="delete">
+                        <i class="fa-solid fa-xmark">
+                        </i>
+                    </a>
                 </header>
                 <section class="modal-card-body">
                     <div class="container">
-                        <div class="columns is-centered">
-                            <div class="column is-half">
+                        <div class="columns">
+                            <div class="column">
                                 <div class="field is-vertical">
                                     <div class="field-label">
                                         <label class="label has-text-centered">Nombre:</label>
@@ -213,48 +230,48 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="">
-                                                <label class="label has-text-centered">apellido:</label>
-                                                <input class="input" type="text" placeholder="">
-
-                                                <span class="icon is-small is-left">
-                                                    <i class="fas fa-user"></i>
-                                                </span>
+                                                <input class="input" type="text" placeholder="Digite el nombre">
+                                                <span class="icon-text">
+                                                    <span class="icon">
+                                                      <i class="fas fa-utensils"></i>
+                                                    </span>
+                                                  </span>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
                                 <div class="field is-vertical">
                                     <div class="field-label">
-                                        <label class="label has-text-centered">direccion</label>
+                                        <label class="label has-text-centered">Costo adicional:</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="">
-                                                <label class="label has-text-centered">direccion</label>
-                                                <input class="input" type="text" placeholder="">
-                                                <label class="label has-text-centered">documento</label>
-                                                <input class="input" type="text" placeholder="">
-                                                <span class="icon is-small is-left">
-                                                    <i class="fas fa-envelope"></i>
-                                                </span>
+                                                <input class="input" type="number" placeholder="Digite el costo">
+                                                <span class="icon-text">
+                                                    <span class="icon">
+                                                        <i class="fas fa-arrow-right"></i>
+                                                      </span>
+                                                  </span>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="field is-vertical">
-
-                                </div>
                             </div>
                         </div>
                     </div>
-            </div>
-            </section>
-            <footer class=" modal-card-foot">
-                <button class="button cancel is-primary" name="new">Cancelar</button>
-                <button class="button is-success" type="submit">Confirmar</button>
-            </footer>
+                </section>
+                    <footer class=" modal-card-foot">
+                        <a href="adminingredientes.html" class="button is-primary">Cancelar</a>
+                        <button class="button is-success" type="submit">Confirmar</button>
+                    </footer>               
+                    <div class="notifications"></div>
+
+
     </div>
     </form>
     </div>
@@ -264,10 +281,9 @@
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Editar Cliente</p>
-                    <a href="clientes.html" class="delete">
+                    <p class="modal-card-title">Editar Ingrediente</p>
+                    <a href="adminingredientes.html" class="delete">
                         <i class="fa-solid fa-xmark">
-
                         </i>
                     </a>
                 </header>
@@ -282,24 +298,29 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="" value="Yeiner">
-                                                <span class="icon is-small is-left">
-                                                    <i class="fas fa-user"></i>
-                                                </span>
+                                                <input class="input" type="text" placeholder="" value="Tomate">
+                                                <span class="icon-text">
+                                                    <span class="icon">
+                                                      <i class="fas fa-utensils"></i>
+                                                    </span>
+                                                  </span>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="field is-vertical">
                                     <div class="field-label">
-                                        <label class="label has-text-centered">apellido:</label>
+                                        <label class="label has-text-centered">Costo:</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="naranjo"> 
-                                                <label class="label has-text-centered">direccion:</label>
-                                                <input class="input" type="text" placeholder="calle 11">
+                                                <input class="input" type="number" placeholder="Digite el costo"> 
+                                                <span class="icon-text">
+                                                    <span class="icon">
+                                                        <i class="fas fa-arrow-right"></i>
+                                                      </span>
+                                                  </span>
                                             </p>
                                         </div>
                                     </div>
@@ -311,10 +332,12 @@
                     
             </div>
             <footer class=" modal-card-foot">
-                <button class="button is-primary" name="edit" type="button">Cancelar</button>
+                <a href="adminingredientes.html" class="button is-primary">Cancelar</a>
                 <button class="button is-success" type="submit">Confirmar</button>
             </footer>
-    </div>
+            <div class="notifications"></div>
+
+        </div>
     </section>
     
     </div>
