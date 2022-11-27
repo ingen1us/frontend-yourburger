@@ -145,6 +145,9 @@ allButtons.forEach((btn) => {
         if (!haySelect) {
           campos["select"] = true;
         }
+        if (!hayNumero) {
+          campos["number"] = true;
+        }
       }
     }
 
