@@ -5,11 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello Bulma!</title>
-<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/mystyles.css">
     <script src="https://kit.fontawesome.com/f02518bebc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/switch.css">
     <link rel="stylesheet" href="./css/responsive-table.css">
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,7 +56,7 @@
                     Roles
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="ventas.html">
                     Ventas
                 </a>
             </div>
@@ -71,9 +78,10 @@
     </nav>
 
     <div class="container is-fluid mt-5">
+        <div class="notifications float"></div>
         <div class="columns is-centered">
-            <div class="column is-narrow">
-                <button class="button is-success is-fullwidth" name="new">Crear cliente+</button>
+            <div class="column">
+                <button class="button is-success is-fullwidth" type="button" name="new">Crear Cliente +</button>
             </div>
             <div class="column is-9">
                 <div class="control has-icons-left">
@@ -83,20 +91,21 @@
                     </span>
                 </div>
             </div>
-            <div class="column is-narrow">
-                <button class="button is-primary is-fullwidth">Generar PDF</button>
+            <div class="column">
+                <button class="button is-primary is-fullwidth" type="button" name="pdf">Generar PDF</button>
             </div>
         </div>
 
         <div style="overflow-x: auto;">
-            <table class=" table is-fullwidth">
+            <table class="table is-fullwidth">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>nombre </th>
-                        <th>apellido</th>
-                        <th>direccion</th>
-                        <th>documento </th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Documento</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -105,9 +114,10 @@
                     <tr>
                         <td scope="row" data-label="id">0</td>
                         <td data-label="nombre">Yeiner</td>
-                        <td data-label="apellido">naranjo</td>
-                        <td data-label="direccion"> calle 11</td>
-                        <td data-label="documento ">43156456</td>
+                        <td data-label="apellido">Naranjo</td>
+                        <td data-label="direccion">Calle 11</td>
+                        <td data-label="telefono">123456</td>
+                        <td data-label="documento">43156456</td>
                         <td data-label="editar">
                             <button class="button edit is-warning" name="edit">
                                 <span class="icon">
@@ -116,7 +126,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteClient" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -128,6 +138,7 @@
                         <td data-label="nombre">Jose</td>
                         <td data-label="apellido">alzate</td>
                         <td data-label="direccion">calle 56</td>
+                        <td data-label="telefono">604578445</td>
                         <td data-label="documento ">431567777</td>
                         <td data-label="editar">
                             <button class="button edit is-warning" name="edit">
@@ -137,7 +148,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteClient" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -149,6 +160,7 @@
                         <td data-label="nombre">Ana</td>
                         <td data-label="apellido">ana@gmail.com</td>
                         <td data-label="direccion">calle 76</td>
+                        <td data-label="telefono">4521126</td>
                         <td data-label="documento">43156455</td>
 
                         <td data-label="editar">
@@ -159,7 +171,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteClient" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -171,6 +183,7 @@
                         <td data-label="nombre">Julián</td>
                         <td data-label="apellido">julian@gmail.com</td>
                         <td data-label="direccion">calle 87</td>
+                        <td data-label="telefono">1447854</td>
                         <td data-label="documento">4366554</td>
                         <td data-label="editar">
                             <button class="button edit is-warning" name="edit">
@@ -180,7 +193,7 @@
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary">
+                            <button class="button is-primary" name="deleteClient" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -198,8 +211,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Nuevo cliente</p>
-                    <button class="delete" aria-label="close" name="new">
-
+                    <button class="delete" aria-label="close" name="new" type="button">
                     </button>
                 </header>
                 <section class="modal-card-body">
@@ -214,9 +226,6 @@
                                         <div class="field">
                                             <p class="control has-icons-left">
                                                 <input class="input" type="text" placeholder="">
-                                                <label class="label has-text-centered">apellido:</label>
-                                                <input class="input" type="text" placeholder="">
-
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-user"></i>
                                                 </span>
@@ -226,37 +235,75 @@
                                 </div>
                                 <div class="field is-vertical">
                                     <div class="field-label">
-                                        <label class="label has-text-centered">direccion</label>
+                                        <label class="label has-text-centered">Apellido:</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
                                                 <input class="input" type="text" placeholder="">
-                                                <label class="label has-text-centered">direccion</label>
-                                                <input class="input" type="text" placeholder="">
-                                                <label class="label has-text-centered">documento</label>
-                                                <input class="input" type="text" placeholder="">
                                                 <span class="icon is-small is-left">
-                                                    <i class="fas fa-envelope"></i>
+                                                    <i class="fas fa-user"></i>
                                                 </span>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="field is-vertical">
-
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Direccion:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" name="dir" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Telefono:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="number" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-phone"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Documento:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="number" placeholder="">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-address-book"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button cancel is-primary" name="new">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+                <div class="notifications"></div>
             </div>
-            </section>
-            <footer class=" modal-card-foot">
-                <button class="button cancel is-primary" name="new">Cancelar</button>
-                <button class="button is-success" type="submit">Confirmar</button>
-            </footer>
-    </div>
-    </form>
+        </form>
     </div>
 
     <div class="modal modal-edit">
@@ -265,11 +312,9 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Editar Cliente</p>
-                    <a href="clientes.html" class="delete">
-                        <i class="fa-solid fa-xmark">
+                    <button class="delete" aria-label="close" name="edit" type="button">
 
-                        </i>
-                    </a>
+                    </button>
                 </header>
                 <section class="modal-card-body">
                     <div class="container">
@@ -292,33 +337,76 @@
                                 </div>
                                 <div class="field is-vertical">
                                     <div class="field-label">
-                                        <label class="label has-text-centered">apellido:</label>
+                                        <label class="label has-text-centered">Apellido:</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="naranjo"> 
-                                                <label class="label has-text-centered">direccion:</label>
-                                                <input class="input" type="text" placeholder="calle 11">
+                                                <input class="input" type="text" placeholder="" value="Naranjo">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Direccion:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="text" name="dir" placeholder=""
+                                                    value="Calle 11">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Telefono:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="number" placeholder="" value="123456">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-phone"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-vertical">
+                                    <div class="field-label">
+                                        <label class="label has-text-centered">Documento:</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control has-icons-left">
+                                                <input class="input" type="number" placeholder="" value="43156456">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-address-book"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+                </section>
+                <footer class=" modal-card-foot">
+                    <button class="button is-primary" name="edit" type="button">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
+                </footer>
+                <div class="notifications"></div>
             </div>
-            <footer class=" modal-card-foot">
-                <button class="button is-primary" name="edit" type="button">Cancelar</button>
-                <button class="button is-success" type="submit">Confirmar</button>
-            </footer>
-    </div>
-    </section>
-    
-    </div>
-    </form>
+        </form>
     </div>
 
 

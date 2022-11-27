@@ -94,20 +94,21 @@
     </nav>
 
     <div class="container is-fluid mt-5">
+        <div class="notifications float"></div>
         <div class="columns is-centered">
-            <div class="column is-narrow">
+            <div class="column">
                 <a href="pedido.html" class="button is-success is-fullwidth" name="new">Crear Pedido +</a>
             </div>
             <div class="column is-9">
                 <div class="control has-icons-left">
-                    <input class="input" type="text" placeholder="Buscar usuario">
+                    <input class="input" type="text" placeholder="Buscar pedido">
                     <span class="icon is-small is-left">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
                 </div>
             </div>
-            <div class="column is-narrow">
-                <button class="button is-primary is-fullwidth">Generar PDF</button>
+            <div class="column">
+                <button class="button is-primary is-fullwidth" name="pdf">Generar PDF</button>
             </div>
         </div>
 
@@ -307,6 +308,7 @@
                 <footer class=" modal-card-foot">
                     <button class="button cancel is-primary" name="detalle">Volver</button>
                 </footer>
+                <div class="notifications"></div>
             </div>
         </form>
     </div>

@@ -42,6 +42,24 @@ allButtons.forEach((btn) => {
       );
     }
 
+    if (this.name == "deleteProduct") {
+      crearNotificacion(
+        document.querySelector(".container .notifications"),
+        "warning",
+        "Producto eliminado exitosamente!",
+        0
+      );
+    }
+
+    if (this.name == "deleteClient") {
+      crearNotificacion(
+        document.querySelector(".container .notifications"),
+        "warning",
+        "Cliente eliminado exitosamente!",
+        0
+      );
+    }
+
     if (this.name == "deleteRol") {
       crearNotificacion(
         document.querySelector(".container .notifications"),
@@ -78,9 +96,6 @@ allButtons.forEach((btn) => {
     function toggleForm() {
       if (isActive) {
         document.querySelector(`.form-${btn.name}`).reset();
-        eliminarNotificaciones(
-          activeForm.parentElement.querySelector(".notifications")
-        );
         activeInputs.forEach((inp) => {
           inp.classList.remove("is-success");
           inp.classList.remove("is-danger");
@@ -96,6 +111,9 @@ allButtons.forEach((btn) => {
           .classList.remove("is-active");
         isActive = false;
       } else {
+        eliminarNotificaciones(
+          activeForm.parentElement.querySelector(".notifications")
+        );
         document.querySelector(`.modal-${btn.name}`).classList.add("is-active");
         isActive = true;
         activeInputs.forEach((inp) => {
@@ -143,8 +161,38 @@ allButtons.forEach((btn) => {
 
     activeForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
       if (campos.text && campos.number && hayNumero == true) {
+        console.log("Pasó");
         toggleForm();
+        if (location.pathname.substring(1) == "clientes.html") {
+          crearNotificacion(
+            document.querySelector(".container .notifications"),
+            "success",
+            activeName == "new"
+              ? "Cliente creado con exito!"
+              : "Los datos del cliente han sido actualizados!",
+            0
+          );
+        } else if (location.pathname.substring(1) == "adminProductos.html") {
+          crearNotificacion(
+            document.querySelector(".container .notifications"),
+            "success",
+            activeName == "new"
+              ? "Producto creado con exito!"
+              : "La información del producto ha sido actualizada!",
+            0
+          );
+        } else if (location.pathname.substring(1) == "adminingredientes.html") {
+          crearNotificacion(
+            document.querySelector(".container .notifications"),
+            "success",
+            activeName == "new"
+              ? "Ingrediente creado con exito!"
+              : "La información del ingrediente ha sido actualizada!",
+            0
+          );
+        }
       } else {
         crearNotificacion(
           activeForm.parentElement.querySelector(".notifications"),
@@ -156,7 +204,8 @@ allButtons.forEach((btn) => {
         );
       }
 
-      if (campos.text && campos.email && campos.checkbox) {
+      if (campos.text && campos.email && campos.checkbox && hayEmail == true) {
+        console.log("Pasó");
         toggleForm();
         if (location.pathname.substring(1) == "usuarios.html") {
           crearNotificacion(
@@ -188,7 +237,13 @@ allButtons.forEach((btn) => {
         );
       }
 
-      if (campos.dir && campos.checkbox && haydir == true) {
+      if (
+        campos.dir &&
+        campos.checkbox &&
+        haydir == true &&
+        hayNumero == false
+      ) {
+        console.log("Pasó");
         toggleForm();
       } else {
         crearNotificacion(
@@ -201,6 +256,7 @@ allButtons.forEach((btn) => {
         );
       }
       if (campos.select && haySelect == true) {
+        console.log("Pasó");
         toggleForm();
       } else {
         crearNotificacion(
@@ -212,19 +268,21 @@ allButtons.forEach((btn) => {
           0
         );
       }
-      if(campos.number){
+      if (campos.number) {
+        console.log("Pasó");
         toggleForm();
-      }else{
+      } else {
         crearNotificacion(
           activeForm.parentElement.querySelector(".notifications"),
           "error",
           activeName == "new"
-          ?"Rellene todos los campos"
-          :"No se detectaron cambios",
+            ? "Rellene todos los campos"
+            : "No se detectaron cambios",
           0
         );
       }
       if (campos.text && campos.number && hayNumero == true) {
+        console.log("Pasó");
         toggleForm();
       } else {
         crearNotificacion(
