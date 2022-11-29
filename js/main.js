@@ -86,6 +86,15 @@ allButtons.forEach((btn) => {
         0
       );
     }
+    if (this.name == "cancelPedido") {
+      crearNotificacion(
+        document.querySelector(".container .notifications"),
+        "warning",
+        "Pedido cancelado exitosamente",
+        0
+      );
+    }
+    
 
     if (this.name != "") {
       activeName = this.name;

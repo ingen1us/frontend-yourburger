@@ -14,7 +14,6 @@
             border-radius: 5px;
             margin: 15px;
             padding: 5px;
-            width: 250px;
             border: 2px solid;
         }
 
@@ -49,21 +48,23 @@
         .plus {
             font-size: 100px;
             font-style: normal;
-            display: table-cell;
             vertical-align: middle;
             text-align: center;
+            margin: auto;
         }
 
         .añadir {
-            display: table;
+            display: flex;
             background-color: hsl(0deg, 0%, 100%);
             border-radius: 5px;
             margin: 15px;
             padding: 5px;
-            width: 250px;
             border: 2px solid;
+            height: 90%;
 
         }
+
+
 
         h1 {
             font-size: 40px;
@@ -84,6 +85,10 @@
         .valor {
             width: 100%;
             text-align: end;
+        }
+
+        .mas {
+            color: black;
         }
     </style>
 </head>
@@ -150,29 +155,44 @@
                 </div>
                 <div class="hr"></div>
 
-                <div class="is-flex  is-centered">
+                <div class="columns">
 
-                    <div class="card card-pedido p-5">
-                        <img src="img/hamburguesa.jpg" alt="" class="img" />
-                        <b>
-                            <p>hamburguesas</p>
-                        </b>
-                        <span>14000$</span> <br>
-                        <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="column is-full-tablet-only">
+                        <div class="card card-pedido p-5">
+                            <img src="img/hamburguesa.jpg" alt="" class="img" />
+                            <b>
+                                <p>hamburguesas</p>
+                            </b>
+                            <span>14000$</span> <br>
+                            <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                        </div>
                     </div>
-                    <div class="card card-pedido p-5">
-                        <img src="img/hamburguesa.jpg" alt="" class="img" />
-                        <b>
-                            <p>hamburguesas</p>
-                        </b>
-                        <span>14000$</span> <br>
-                        <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                    <div class="column is-full-tablet-only">
+                        <div class="card card-pedido p-5">
+                            <img src="img/hamburguesa.jpg" alt="" class="img" />
+                            <b>
+                                <p>hamburguesas</p>
+                            </b>
+                            <span>14000$</span> <br>
+                            <input type="number" name="" id="" class="input number m-0" value="1" min="0" />
+                        </div>
                     </div>
+
+
+
+
                     <!-- envia a productos -->
 
-                    <div class="card añadir">
-                        <i class="fa-light fa-plus plus"></i>
+
+                    <div class="column is-full-tablet-only">
+                        <div class="card añadir">
+                            <a href="producto.html" class="mas m-auto">
+                                <i class="fa-light fa-plus plus mas"></i>
+                            </a>
+                        </div>
+
                     </div>
+
 
 
                 </div>
