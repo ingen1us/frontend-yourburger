@@ -9,107 +9,117 @@
     <script src="https://kit.fontawesome.com/f02518bebc.js" crossorigin="anonymous"></script>
     <title>Registro</title>
     <style>
-        body{
+        body {
             background-image: url('https://img.freepik.com/vector-premium/fondo-vintage-oriental-adornos-indopersianos-papel-tapiz-lujoso-real-rojo-dorado_619989-254.jpg?w=2000');
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover ;
+            background-size: cover;
         }
-        a{
+
+        a {
             color: black;
         }
-        a:hover{
-            color: grey ;
+
+        a:hover {
+            color: grey;
         }
     </style>
 </head>
 
 <body>
     <section class="hero is-fullheight">
-        <div class="hero-body has-text-centered">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div class="column is-half has-background-white">
-                        <div class="card">
-                            <header class="card-header">
-                                <div class="media">
-                                    <img src="/img/Logo.png" width="230px">
-                                </div>
-                            </header>
-                            <div class="card-content px-6">
-                                <div class="content">
-                                    <div class="field is-vertical">
-                                        <div class="field-label">
-                                            <label class="label has-text-centered">Nombre</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control has-icons-left">
-                                                    <input class="input" type="text" placeholder="">
-                                                    <span class="icon is-small is-left">
-                                                        <i class="fas fa-user"></i>
-                                                    </span>
-                                                </p>
+        <form class="form-registro">
+            <div class="notifications"></div>
+            <div class="hero-body has-text-centered">
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-half has-background-white">
+                            <div class="card">
+                                <header class="card-header">
+                                    <div class="media">
+                                        <img src="/img/Logo.png" width="230px">
+                                    </div>
+                                </header>
+                                <div class="card-content px-6">
+                                    <div class="content">
+                                        <div class="field is-vertical">
+                                            <div class="field-label">
+                                                <label class="label has-text-centered">Nombre</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="text" placeholder="" name="nombre">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-user"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="field is-vertical">
-                                        <div class="field-label">
-                                            <label class="label has-text-centered">Correo</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control has-icons-left">
-                                                    <input class="input" type="text" placeholder="">
-                                                    <span class="icon is-small is-left">
-                                                        <i class="fas fa-envelope"></i>
-                                                    </span>
-                                                </p>
+                                        <div class="field is-vertical">
+                                            <div class="field-label">
+                                                <label class="label has-text-centered">Correo</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="text" placeholder="" name="email">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-envelope"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="field is-vertical">
-                                        <div class="field-label">
-                                            <label class="label has-text-centered">Contraseña</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control has-icons-left">
-                                                    <input class="input" type="password" placeholder="">
-                                                    <span class="icon is-small is-left">
-                                                        <i class="fas fa-key"></i>
-                                                    </span>
-                                                </p>
+                                        <div class="field is-vertical">
+                                            <div class="field-label">
+                                                <label class="label has-text-centered">Contraseña</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="password" placeholder=""
+                                                            name="password">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-key"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="field is-vertical">
-                                        <div class="field-label">
-                                            <label class="label has-text-centered">Confirmar Contraseña</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control has-icons-left">
-                                                    <input class="input" type="password" placeholder="">
-                                                    <span class="icon is-small is-left">
-                                                        <i class="fas fa-key"></i>
-                                                    </span>
-                                                </p>
+                                        <div class="field is-vertical">
+                                            <div class="field-label">
+                                                <label class="label has-text-centered">Confirmar Contraseña</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="password" placeholder=""
+                                                            name="password">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-key"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
+                                        <a class="button is-primary" href="login.html" type="submit">Registrar
+                                            Usuario</a>
+                                        <br>
+                                        <br>
+                                        <a href="login.html">¿Ya tienes una cuenta?</a>
                                     </div>
-                                    <a class="button is-primary" href="login.html">Registrar Usuario</a>
-                                    <br>
-                                    <br>
-                                    <a href="login.html">¿Ya tienes una cuenta?</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
+
+    <script src="/js/validations.js"></script>
 </body>
 
 </html>

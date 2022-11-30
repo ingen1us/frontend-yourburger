@@ -82,7 +82,7 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="login.html">
                             Cerrar sesión
                         </a>
                     </div>
@@ -134,14 +134,14 @@
                         <td data-label="Estado">Cancelado</td>
                         <td data-label="Valor">15000</td>
                         <td data-label="detalle" class="pl-5">
-                            <button class="button detalle is-info" name="detalle">
+                            <button class="button detalle is-info" name="detalle" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-info"></i>
                                 </span>
                             </button>
                         </td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button is-warning" name="edit" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
@@ -156,14 +156,14 @@
                         <td data-label="Estado">Enviado</td>
                         <td data-label="Valor">50000</td>
                         <td data-label="detalle" class="pl-5">
-                            <button class="button detalle is-info" name="detalle">
+                            <button class="button detalle is-info" name="detalle" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-info"></i>
                                 </span>
                             </button>
                         </td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button is-warning" name="edit" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
@@ -178,14 +178,14 @@
                         <td data-label="Estado">Enviado</td>
                         <td data-label="Valor">45000</td>
                         <td data-label="detalle" class="pl-5">
-                            <button class="button detalle is-info" name="detalle">
+                            <button class="button detalle is-info" name="detalle" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-info"></i>
                                 </span>
                             </button>
                         </td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button is-warning" name="edit" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
@@ -202,7 +202,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Detalle Pedido</p>
-                    <button class="delete" aria-label="close" name="detalle">
+                    <button class="delete" aria-label="close" name="detalle" type="button">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </header>
@@ -282,7 +282,7 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <button class="button cancel is-primary" name="detalle">Volver</button>
+                    <button class="button cancel is-primary" name="detalle" type="button">Volver</button>
                 </footer>
                 <div class="notifications"></div>
             </div>
@@ -295,7 +295,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Editar Venta</p>
-                    <button class="delete" name="edit" aria-label="close">
+                    <button class="delete" name="edit" aria-label="close" type="button">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </header>
@@ -305,17 +305,15 @@
                             <div class="column is-half">
                                 <div class="field is-vertical">
                                     <div class=" field-label">
-                                        <label class="label has-text-centered">contraseña:</label>
+                                        <label class="label has-text-centered">Contraseña:</label>
                                     </div>
-                                    <div style="display: none;"><input type="text" style="display: none;"></div>
 
                                     <div class="field-body">
-                                        <input type="password" name="pass" id="pass" class="input">
+                                        <input type="password" name="password" id="pass" class="input">
                                     </div>
                                     <div class=" field-label">
                                         <label class="label has-text-centered">Estado:</label>
                                     </div>
-                                    <div style="display: none;"><input type="text" style="display: none;"></div>
 
                                     <div class="field-body">
                                         <div class="select" style="min-width: 100%;">
@@ -326,7 +324,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
 
                             </div>
@@ -334,7 +332,7 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <button class="button cancel is-primary" name="edit">Cancelar</button>
+                    <button class="button cancel is-primary" name="edit" type="button">Cancelar</button>
                     <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
                 <div class="notifications"></div>
@@ -342,7 +340,7 @@
         </form>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/validations.js"></script>
 </body>
 
 </html>

@@ -3328,7 +3328,7 @@ div.icon-text {
   border-color: hsl(0deg, 0%, 71%);
 }
 .select select:focus, .textarea:focus, .input:focus, .select select.is-focused, .is-focused.textarea, .is-focused.input, .select select:active, .textarea:active, .input:active, .select select.is-active, .is-active.textarea, .is-active.input {
-  border-color: #FFEDB9;
+  border-color: #DBDBDA;
   box-shadow: 0 0 0 0.125em rgba(255, 237, 185, 0.25);
 }
 .select select[disabled], [disabled].textarea, [disabled].input, fieldset[disabled] .select select, .select fieldset[disabled] select, fieldset[disabled] .textarea, fieldset[disabled] .input {

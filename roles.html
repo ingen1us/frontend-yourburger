@@ -61,7 +61,7 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="login.html">
                             Cerrar sesión
                         </a>
                     </div>
@@ -74,7 +74,7 @@
         <div class="notifications float"></div>
         <div class="columns is-centered">
             <div class="column is-2">
-                <button class="button is-success is-fullwidth" name="new">Crear Rol +</button>
+                <button class="button is-success is-fullwidth" name="new" type="button">Crear Rol +</button>
             </div>
             <div class="column is-10">
                 <div class="control has-icons-left">
@@ -112,14 +112,14 @@
                         </label>
                     </td>
                     <td data-label="editar">
-                        <button class="button edit is-warning" name="edit">
+                        <button class="button edit is-warning" name="edit" type="button">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
                         </button>
                     </td>
                     <td data-label="eliminar">
-                        <button class="button is-primary" type="button" name="deleteRol">
+                        <button class="button is-primary" name="deleteRol">
                             <span class="icon">
                                 <i class="fa-solid fa-trash"></i>
                             </span>
@@ -138,14 +138,14 @@
                         </label>
                     </td>
                     <td data-label="editar">
-                        <button class="button edit is-warning" name="edit">
+                        <button class="button edit is-warning" name="edit" type="button">
                             <span class="icon">
                                 <i class="fa-solid fa-pencil"></i>
                             </span>
                         </button>
                     </td>
                     <td data-label="eliminar">
-                        <button class="button is-primary" type="button" name="deleteRol">
+                        <button class="button is-primary" name="deleteRol">
                             <span class="icon">
                                 <i class="fa-solid fa-trash"></i>
                             </span>
@@ -177,7 +177,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="">
+                                                <input class="input" type="text" placeholder="" name="nombre">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-user"></i>
                                                 </span>
@@ -322,7 +322,8 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="" value="Cliente">
+                                                <input class="input" type="text" placeholder="" value="Cliente"
+                                                    name="nombre">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-user"></i>
                                                 </span>
@@ -443,7 +444,7 @@
     </div>
 
 
-    <script src="js/main.js"></script>
+    <script src="js/validations.js"></script>
 </body>
 
 </html>

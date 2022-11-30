@@ -61,7 +61,7 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="login.html">
                             Cerrar sesión
                         </a>
                     </div>
@@ -73,12 +73,12 @@
     <div class="container is-fluid mt-5">
         <div class="columns is-centered">
             <div class="column">
-                <button class="button is-success is-fullwidth" name="new">Crear Ingrediente +</button>
+                <button class="button is-success is-fullwidth" name="new" type="button">Crear Ingrediente +</button>
             </div>
             <div class="notifications float"></div>
             <div class="column is-10">
                 <div class="control has-icons-left">
-                    <input class="input" type="text" placeholder="Buscar cliente">
+                    <input class="input" type="text" placeholder="Buscar ingrediente">
                     <span class="icon is-small is-left">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
@@ -104,7 +104,7 @@
                         <td data-label="nombre">tomate</td>
                         <td data-label="costoadicional">500</td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" name="edit" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
@@ -118,7 +118,7 @@
                             </label>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" type="button" name="deleteingrediente">
+                            <button class="button is-primary" name="deleteingrediente">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -131,7 +131,7 @@
                         <td data-label="nombre">pepino</td>
                         <td data-label="editar">6000</td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" name="edit" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
@@ -145,7 +145,7 @@
                             </label>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" type="button" name="deleteingrediente">
+                            <button class="button is-primary" name="deleteingrediente">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -157,7 +157,7 @@
                         <td data-label="nombre">lechuga</td>
                         <td data-label="editar">700</td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" name="edit" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
@@ -171,7 +171,7 @@
                             </label>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" type="button" name="deleteingrediente">
+                            <button class="button is-primary" name="deleteingrediente">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -183,7 +183,7 @@
                         <td data-label="nombre">piña</td>
                         <td data-label="editar">2000</td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" name="edit" type="button">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
@@ -197,7 +197,7 @@
                             </label>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" type="button" name="deleteingrediente">
+                            <button class="button is-primary" name="deleteingrediente">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -214,10 +214,10 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Nuevo Ingrediente</p>
-                    <a href="adminingredientes.html" class="delete">
+                    <button class="delete" type="button" name="new">
                         <i class="fa-solid fa-xmark">
                         </i>
-                    </a>
+                    </button>
                 </header>
                 <section class="modal-card-body">
                     <div class="container">
@@ -230,7 +230,8 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="Digite el nombre">
+                                                <input class="input" type="text" placeholder="Digite el nombre"
+                                                    name="nombre">
                                                 <span class="icon-text">
                                                     <span class="icon">
                                                         <i class="fas fa-utensils"></i>
@@ -251,7 +252,8 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="number" placeholder="Digite el costo">
+                                                <input class="input" type="number" placeholder="Digite el costo"
+                                                    name="numero">
                                                 <span class="icon-text">
                                                     <span class="icon">
                                                         <i class="fas fa-arrow-right"></i>
@@ -266,7 +268,7 @@
                     </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <a href="adminingredientes.html" class="button is-primary">Cancelar</a>
+                    <button class="button is-primary" type="button" name="new">Cancelar</button>
                     <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
                 <div class="notifications"></div>
@@ -282,10 +284,10 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Editar Ingrediente</p>
-                    <a href="adminingredientes.html" class="delete">
+                    <button class="delete" type="button" name="edit">
                         <i class="fa-solid fa-xmark">
                         </i>
-                    </a>
+                    </button>
                 </header>
                 <section class="modal-card-body">
                     <div class="container">
@@ -298,7 +300,8 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="" value="Tomate">
+                                                <input class="input" type="text" placeholder="" value="Tomate"
+                                                    name="nombre">
                                                 <span class="icon-text">
                                                     <span class="icon">
                                                         <i class="fas fa-utensils"></i>
@@ -315,7 +318,8 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="number" placeholder="Digite el costo">
+                                                <input class="input" type="number" placeholder="Digite el costo"
+                                                    name="numero">
                                                 <span class="icon-text">
                                                     <span class="icon">
                                                         <i class="fas fa-arrow-right"></i>
@@ -332,7 +336,7 @@
 
             </div>
             <footer class=" modal-card-foot">
-                <a href="adminingredientes.html" class="button is-primary">Cancelar</a>
+                <button class="button is-primary" type="button">Cancelar</button>
                 <button class="button is-success" type="submit">Confirmar</button>
             </footer>
             <div class="notifications"></div>
@@ -345,7 +349,7 @@
     </div>
 
 
-    <script src="js/main.js"></script>
+    <script src="js/validations.js"></script>
 </body>
 
 </html>

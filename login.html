@@ -9,26 +9,30 @@
     <script src="https://kit.fontawesome.com/f02518bebc.js" crossorigin="anonymous"></script>
     <title>login</title>
     <style>
-        body{
+        body {
             background-image: url('https://img.freepik.com/vector-premium/fondo-vintage-oriental-adornos-indopersianos-papel-tapiz-lujoso-real-rojo-dorado_619989-254.jpg?w=2000');
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover ;
+            background-size: cover;
         }
-        a{
+
+        a {
             color: black;
         }
-        a:hover{
-            color: grey ;
+
+        a:hover {
+            color: grey;
         }
-        .contra{
+
+        .contra {
             border: none;
             background-color: white;
         }
-        .contra:hover{
+
+        .contra:hover {
             color: grey;
             cursor: pointer;
-            
+
 
         }
     </style>
@@ -36,73 +40,75 @@
 
 <body>
     <section class="hero is-fullheight">
-        <div class="hero-body has-text-centered">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div class="column is-half has-background-white">
-                        <div class="card">
-                            <header class="card-header">
-                                <div class="media">
-                                    <img src="/img/Logo.png" width="230px">
-                                </div>
-                            </header>
-                            <div class="card-content px-6">
-                                <div class="content">
-                                    <div class="field is-vertical">
-                                        <div class="field-label">
-                                            <label class="label has-text-centered">Correo</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control has-icons-left">
-                                                    <input class="input" type="text" placeholder="">
-                                                    <span class="icon is-small is-left">
-                                                        <i class="fas fa-envelope"></i>
-                                                    </span>
-                                                </p>
+        <form class="form-login">
+            <div class="notifications"></div>
+            <div class="hero-body has-text-centered">
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-half has-background-white">
+                            <div class="card">
+                                <header class="card-header">
+                                    <div class="media">
+                                        <img src="/img/Logo.png" width="230px">
+                                    </div>
+                                </header>
+                                <div class="card-content px-6">
+                                    <div class="content">
+                                        <div class="field is-vertical">
+                                            <div class="field-label">
+                                                <label class="label has-text-centered">Correo</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="email" name="email">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-envelope"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="field is-vertical">
-                                        <div class="field-label">
-                                            <label class="label has-text-centered">Contraseña</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <p class="control has-icons-left">
-                                                    <input class="input" type="password" placeholder="">
-                                                    <span class="icon is-small is-left">
-                                                        <i class="fas fa-key"></i>
-                                                    </span>
-                                                </p>
+                                        <div class="field is-vertical">
+                                            <div class="field-label">
+                                                <label class="label has-text-centered">Contraseña</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="password" name="password">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-key"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
+                                        <a class="button is-primary" href="/" type="submit">Iniciar sesión</a>
+                                        <br>
+                                        <br>
+                                        <button class="is-link contra" type="button" name="recuperar">¿Olvidaste tu
+                                            contraseña?</button>
+                                        <br>
+                                        <br>
+                                        <a href="registro.html">¿Aún no tienes una cuenta?</a>
                                     </div>
-                                    <a class="button is-primary" href="/">Iniciar sesión</a>
-                                    <br>
-                                    <br>
-                                    <button class="is-link contra" name="new">¿Olvidaste tu contraseña?</button>
-                                    <br>
-                                    <br>
-                                    <a href="registro.html">¿Aún no tienes una cuenta?</a>
                                 </div>
                             </div>
                         </div>
-                        
-   
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
 
-    <div class="modal modal-new">
-        <form class="form-new">
+    <div class="modal modal-recuperar">
+        <form class="form-recuperar">
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Recuperar Contraseña</p>
-                    <button class="delete" aria-label="close" name="new">
+                    <button class="delete" aria-label="close" name="recuperar" type="button">
                     </button>
                 </header>
                 <section class="modal-card-body">
@@ -111,12 +117,12 @@
                             <div class="column">
                                 <div class="field is-vertical">
                                     <div class="field-label">
-                                        <label class="label has-text-centered">Ingrese su Nombre:</label>
+                                        <label class="label has-text-centered">Ingrese su nombre:</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="">
+                                                <input class="input" type="text" placeholder="" name="nombre">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-user"></i>
                                                 </span>
@@ -130,11 +136,12 @@
                             <div class="column">
                                 <div class="field is-vertical">
                                     <div class="field-label">
-                                        <label class="label has-text-centered">Ingrese su Correo</label>                                    </div>
+                                        <label class="label has-text-centered">Ingrese su correo</label>
+                                    </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="email" placeholder="">
+                                                <input class="input" type="email" placeholder="" name="email">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-envelope"></i>
                                                 </span>
@@ -146,14 +153,15 @@
                         </div>
                     </div>
                 </section>
-                <footer class=" modal-card-foot">
-                    <button class="button is-primary" name="new">Cancelar</button>
-                    <button class="button is-success">Confirmar</button>
+                <footer class="modal-card-foot">
+                    <button class="button cancel is-primary" name="recuperar" type="button">Cancelar</button>
+                    <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
+                <div class="notifications"></div>
             </div>
         </form>
     </div>
-    <script src="/js/main.js"></script>
+    <script src="/js/validations.js"></script>
 </body>
 
 </html>

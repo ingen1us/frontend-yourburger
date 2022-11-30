@@ -61,7 +61,7 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="login.html">
                             Cerrar sesión
                         </a>
                     </div>
@@ -117,14 +117,14 @@
                             </label>
                         </td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" type="button" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" name="deleteUser" type="button">
+                            <button class="button is-primary" name="deleteUser">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -144,14 +144,14 @@
                             </label>
                         </td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" type="button" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" name="deleteUser" type="button">
+                            <button class="button is-primary" name="deleteUser">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -171,14 +171,14 @@
                             </label>
                         </td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" type="button" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" name="deleteUser" type="button">
+                            <button class="button is-primary" name="deleteUser">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -198,14 +198,14 @@
                             </label>
                         </td>
                         <td data-label="editar">
-                            <button class="button edit is-warning" name="edit">
+                            <button class="button edit is-warning" type="button" name="edit">
                                 <span class="icon">
                                     <i class="fa-solid fa-pencil"></i>
                                 </span>
                             </button>
                         </td>
                         <td data-label="eliminar">
-                            <button class="button is-primary" name="deleteUser" type="button">
+                            <button class="button is-primary" name="deleteUser">
                                 <span class="icon">
                                     <i class="fa-solid fa-trash"></i>
                                 </span>
@@ -239,7 +239,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="">
+                                                <input class="input" type="text" name="usuario">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-user"></i>
                                                 </span>
@@ -254,7 +254,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="email" placeholder="">
+                                                <input class="input" type="email" name="email">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-envelope"></i>
                                                 </span>
@@ -269,8 +269,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="password" value="your" placeholder=""
-                                                    disabled>
+                                                <input class="input" type="password" value="your" disabled>
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-key"></i>
                                                 </span>
@@ -324,7 +323,8 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input" type="text" placeholder="" value="Yeiner">
+                                                <input class="input" type="text" placeholder="" value="Yeiner"
+                                                    name="usuario">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-user"></i>
                                                 </span>
@@ -340,7 +340,7 @@
                                         <div class="field">
                                             <p class="control has-icons-left">
                                                 <input class="input" type="email" placeholder=""
-                                                    value="yeinernaranjo@gmail.com">
+                                                    value="yeinernaranjo@gmail.com" name="email">
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-envelope"></i>
                                                 </span>
@@ -366,7 +366,7 @@
                     </div>
                 </section>
                 <footer class="modal-card-foot">
-                    <button class="button cancel is-primary" type="button" name="edit">Cancelar</button>
+                    <button class="button cancel is-primary" name="edit" type="button">Cancelar</button>
                     <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
                 <div class="notifications"></div>
@@ -375,7 +375,8 @@
     </div>
 
 
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script src="js/validations.js"></script>
 </body>
 
 </html>

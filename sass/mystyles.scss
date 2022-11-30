@@ -11,6 +11,8 @@ $gray-light: #DBDBDA;
 
 $custom-colors: ("error": ($primary-color, #fff));
 
+$input-focus-border-color: $gray-light;
+
 // Update Bulma's global variables
 $family-sans-serif: "Karla", sans-serif;
 $primary: $primary-color;

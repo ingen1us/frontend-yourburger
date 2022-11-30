@@ -132,7 +132,7 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="login.html">
                             Cerrar sesión
                         </a>
                     </div>
@@ -141,6 +141,7 @@
         </div>
     </nav>
     <div class="container is-fluid mt-5 has-text-centered">
+        <div class="notifications float"></div>
         <div class="columns ">
 
             <div class="column is-two-thirds">
@@ -271,7 +272,7 @@
                         <div class="is-flex is-full">
                             <div class="m-auto pb-5">
                                 <button class="button is-primary mr-3" name="cancelar"> Cancelar</button>
-                                <button class="button is-success" name="buy"> Comprar</button>
+                                <button class="button is-success" name="buy" type="button"> Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -286,7 +287,7 @@
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Comprar</p>
-                    <button class="delete" aria-label="close" name="buy">
+                    <button class="delete" aria-label="close" name="buy" type="button">
                     </button>
                 </header>
                 <section class="modal-card-body">
@@ -295,12 +296,12 @@
                             <div class="column is-half">
                                 <div class="field is-vertical">
                                     <div class="field-label">
-                                        <label class="label has-text-centered">Dirrecion:</label>
+                                        <label class="label has-text-centered">Direcion:</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input" type="text" placeholder="" name="dir"
+                                                <input class="input" type="text" placeholder="" name="direccion"
                                                     value="Cll 55 #45-50">
                                             </p>
                                         </div>
@@ -320,14 +321,14 @@
                         </div>
                 </section>
                 <footer class=" modal-card-foot">
-                    <button class="button cancel is-primary" name="buy">Cancelar</button>
+                    <button class="button cancel is-primary" name="buy" type="button">Cancelar</button>
                     <button class="button is-success" type="submit">Confirmar</button>
                 </footer>
                 <div class="notifications"></div>
             </div>
         </form>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/validations.js"></script>
 </body>
 
 </html>
